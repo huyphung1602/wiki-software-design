@@ -8,11 +8,11 @@ allowed-tools: Bash,Read,Write
 
 ## Role
 
-**Extract text from PDF → single txt file in raw/**
+**Extract text and images from PDF → txt file + image files in raw/**
 
 Called via `/pdf-extractor` slash command or by the orchestrator when chaining skills.
 
-**Position in flow**: `PDF → pdf-extractor → raw/<book-name>/<book-name>.txt`
+**Position in flow**: `PDF → pdf-extractor → raw/<book-name>/<book-name>.txt + raw/<book-name>/images/`
 
 ## How to Use This Skill
 
@@ -33,12 +33,13 @@ Steps:
 ## Input/Output
 
 **Input**: Path to PDF file
-**Output**: `raw/<book-name>/<book-name>.txt` — full extracted text with page separators
+**Output**: `raw/<book-name>/<book-name>.txt` — full extracted text with page separators and `[Image: ...]` placeholders
+**Additional output**: `raw/<book-name>/images/page-NNN-img-MM.<ext>` — extracted images from the PDF
 
 ## Dependencies
 
 ```bash
-pip install pdfplumber
+pip install pdfplumber pymupdf
 ```
 
 ## What NOT to Do
@@ -46,7 +47,7 @@ pip install pdfplumber
 ❌ DO NOT manually extract text
 ❌ DO NOT use pdftotext
 ❌ DO NOT output JSON
-❌ DO NOT modify files in raw/ after creation
+❌ DO NOT modify files in raw/ after creation (exception: pdf-extractor may overwrite during re-extraction)
 
 ✅ DO run the pdf_extractor.py script
 ✅ DO write output to raw/<book-name>/
@@ -64,3 +65,11 @@ pip install pdfplumber
 ```bash
 python3 .claude/skills/pdf-extractor/pdf_extractor.py "Design Patterns.pdf" "raw/design-patterns/design-patterns.txt"
 ```
+
+## Image Extraction
+
+The script also extracts embedded images from each PDF page:
+- Images are saved to `raw/<book-name>/images/` directory
+- `[Image: page-NNN-img-MM.ext]` placeholders appear in the text at approximate image positions
+- Vector graphics (common in technical diagrams) are rendered as PNG
+- If no images are found in the PDF, the output is identical to the old behavior

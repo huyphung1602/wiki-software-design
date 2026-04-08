@@ -33,6 +33,19 @@ Reads one chunk at a time, discusses key takeaways with the user, then creates/u
 - If map.md shows this chunk continues a chapter from a previous chunk, also read the prior chunk(s)
 - Identify key concepts, arguments, and takeaways
 
+### 2b. Describe images (if present)
+
+If the chunk text contains `[Image: page-NNN-img-MM.ext]` placeholders:
+
+1. For each placeholder, read the image file from `raw/<book-name>/images/` using the Read tool (which supports images)
+2. Generate a description of the image content (diagrams, charts, code, etc.)
+3. Replace the placeholder with either:
+   - A text description (for diagrams/concepts that can be conveyed in prose)
+   - An image reference + description (for cases where the visual matters): copy to `content/images/<book>-chNN-img-MM.ext` and reference with `![Description](../images/<book>-chNN-img-MM.ext)`
+4. If the image file doesn't exist or can't be read, replace with `[Image could not be extracted]`
+
+The user will see image descriptions during the interactive discussion (step 3) and can correct or refine them.
+
 ### 3. Present to user (INTERACTIVE — pause here)
 
 Present a summary of the chunk's key takeaways to the user. Ask:

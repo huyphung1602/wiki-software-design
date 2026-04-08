@@ -48,6 +48,22 @@ Identify topics that appear across multiple book sources (check `sources` in YAM
 
 Check word count of each chapter summary and concept page. Flag chapter summaries significantly over 300 words and concept pages significantly over 500 words.
 
+### 8. Orphan cases
+
+Scan all pages in `content/cases/`. For each case page, check if any concept page in `content/concepts/` has a `## Cases` section linking to it. Cases with no inbound links from concept pages are orphans.
+
+### 9. Missing case links on concept pages
+
+For each concept page, check if `content/cases/` contains cases that include this concept in their `concepts` frontmatter. If cases exist but the concept page has no `## Cases` section, flag it.
+
+### 10. Invalid crossroad field
+
+For each case page, verify the `crossroad` field exists and is a boolean value. Flag any non-boolean values.
+
+### 11. Oversized case pages
+
+Check word count of each case page. Flag cases significantly over 1200 words (soft target ~600 words).
+
 ## Output
 
 Present a structured report in chat:
@@ -75,13 +91,25 @@ Present a structured report in chat:
 
 ### Oversized Pages (N)
 - [[page-name]] is <word-count> words (target: <target>)
+
+### Orphan Cases (N)
+- [[case-name]] — no concept pages link to it
+
+### Missing Case Links (N)
+- [[concept-name]] — has N related cases but no ## Cases section
+
+### Invalid Crossroad Fields (N)
+- [[case-name]] — crossroad value is not boolean
+
+### Oversized Case Pages (N)
+- [[case-name]] is <word-count> words (target: ~600, max: ~1200)
 ```
 
 Then append to `content/log.md`:
 
 ```markdown
 ## [YYYY-MM-DD] lint | full check
-- Orphans: N | Broken links: N | Contradictions: N | Stale: N | Missing refs: N | Gaps: N | Oversized: N
+- Orphans: N | Broken links: N | Contradictions: N | Stale: N | Missing refs: N | Gaps: N | Oversized: N | Orphan cases: N | Missing case links: N | Invalid crossroad: N | Oversized cases: N
 ```
 
 ## What NOT to Do
