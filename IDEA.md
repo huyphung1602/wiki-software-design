@@ -1,4 +1,5 @@
 # LLM Wiki
+**Source:** https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f#file-llm-wiki-md
 
 A pattern for building personal knowledge bases using LLMs.
 
