@@ -119,6 +119,9 @@ This wiki is a personal knowledge base on software design, built incrementally f
 - [[testing]] — Black-box validation: observing behavior with specific inputs (1 source)
 - [[reasoning]] — White-box analysis: understanding code through mental simulation (1 source)
 
+## Cases
+- [[estate-agency-frp]] — A hypothetical Estate Agency system built with FRP: base relvars, 13 derived relvars, integrity constraints, feeders/observers (from Out of the Tar Pit)
+
 ## Comparisons
 - [[strategic-vs-tactical-programming]] — Strategic investment vs. tactical shortcuts in software development (1 source)
 - [[generality-vs-specialization]] — The trade-off between general-purpose and special-purpose design (1 source)

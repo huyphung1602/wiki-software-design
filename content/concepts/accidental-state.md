@@ -29,6 +29,9 @@ The distinction is not always obvious. A shopping cart's contents might seem ess
 
 When performance demands caching, the cache is treated as an accidental component — managed by the infrastructure layer, invisible to the essential logic. The cache is a performance optimization, not a design feature. Its correctness is verified by comparing its output to the pure function it accelerates.
 
+## Cases
+- [[estate-agency-frp]] — the Estate Agency system distinguishes essential state (Property, Offer stored as relations) from accidental state (caches, performance hints managed by infrastructure). Feeders/observers ensure derived data never masquerades as essential state (from Out of the Tar Pit)
+
 ## Related
 - [[essential-vs-accidental-complexity]] — the framework for distinguishing necessary from unnecessary
 - [[state-and-complexity]] — why all state, including accidental state, causes complexity

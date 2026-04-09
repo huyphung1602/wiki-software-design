@@ -30,6 +30,9 @@ In [[functional-relational-programming]], the relational model holds essential s
 
 Developers often resist the relational model in application code, viewing it as a database concern. Moseley and Marks argue this is a mistake rooted in historical accident. The model's benefits — [[information-hiding|separation of logical and physical structure]], declarative constraints, and mathematical rigor — are valuable regardless of whether data is persisted. The object-relational impedance mismatch exists because objects are the wrong abstraction for managing state; relations are the right one.
 
+## Cases
+- [[estate-agency-frp]] — the Estate Agency system uses the relational model for all essential state: base relvars (Property, Offer, Room, Commission), derived relvars via relational algebra, and declarative integrity constraints (from Out of the Tar Pit)
+
 ## Related
 - [[functional-relational-programming]] — the architecture built on the relational model
 - [[data-independence]] — a key benefit of the relational approach

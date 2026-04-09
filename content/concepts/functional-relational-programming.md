@@ -35,6 +35,9 @@ FRP separates a system into three distinct components:
 
 FRP is more radical than typical [[modular-design|modular decomposition]]. Where Ousterhout advocates [[deep-modules]] to hide complexity behind interfaces, Moseley and Marks argue for eliminating entire categories of complexity through architectural choices. The two views are complementary: FRP determines what kind of complexity exists, and modular design determines how the remaining complexity is structured.
 
+## Cases
+- [[estate-agency-frp]] — a complete FRP system for an estate agency, with base relvars (Property, Offer, Decision), derived relvars (OpenOffers, CommissionDue), integrity constraints, and feeders/observers (from Out of the Tar Pit)
+
 ## Related
 - [[state-and-complexity]] — the primary problem FRP addresses
 - [[control-flow-complexity]] — the secondary problem FRP eliminates
