@@ -71,3 +71,37 @@ Press.
 [HJ89] I. Hayes and C. Jones. Specifications are not (necessarily) exe-
 cutable. IEE Software Engineering Journal, 4(6):330–338, Novem-
 ber 1989.
+65
+
+---
+Page 66
+---
+
+[Hoa81] C. A. R. Hoare. The emperor’s old clothes. Commun. ACM,
+24(2):75–83, 1981.
+[Kow79] RobertA.Kowalski. Algorithm=logic+control. Commun. ACM,
+22(7):424–436, 1979.
+[Mer85] T. H. Merrett. Persistence and Aldat. In Data Types and Persis-
+tence (Appin), pages 173–188, 1985.
+[NR69] P.NaurandB.Randell. Softwareengineeringreportofaconference
+sponsoredbytheNATOsciencecommitteeGarmischGermany7th-
+11th October 1968, January 01 1969.
+[OB88] A. Ohori and P. Buneman. Type inference in a database program-
+ming language. In Proceedings of the 1988 ACM Conference on
+LISP and Functional Programming, Snowbird, UT, pages 174–183,
+New York, NY, 1988. ACM.
+[O’K90] Richard A. O’Keefe. The Craft of Prolog. The MIT Press, Cam-
+bridge, 1990.
+[PJ+03] Simon Peyton Jones et al., editors. Haskell 98 Language and Li-
+braries, the Revised Report. CUP, April 2003.
+[SS94] Leon Sterling and Ehud Y. Shapiro. The Art of Prolog - Advanced
+Programming Techniques, 2nd Ed. MIT Press, 1994.
+[SU96] RandallB.SmithandDavidUngar. Asimpleandunifyingapproach
+to subjective objects. TAPOS, 2(3):161–178, 1996.
+[vRH04] Peter van Roy and Seif Haridi. Concepts, Techniques, and Models
+of Computer Programming. MIT Press, 2004.
+[Wad95] Philip Wadler. Monads for functional programming. In Advanced
+Functional Programming, pages 24–52, 1995.
+[Won00] Limsoon Wong. Kleisli, a functional query system. J. Funct. Pro-
+gram, 10(1):19–56, 2000.
+66

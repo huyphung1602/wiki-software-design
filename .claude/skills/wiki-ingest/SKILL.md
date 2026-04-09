@@ -33,16 +33,23 @@ Reads one chunk at a time, discusses key takeaways with the user, then creates/u
 - If map.md shows this chunk continues a chapter from a previous chunk, also read the prior chunk(s)
 - Identify key concepts, arguments, and takeaways
 
-### 2b. Describe images (if present)
+### 2b. Handle images (if present)
 
 If the chunk text contains `[Image: page-NNN-img-MM.ext]` placeholders:
 
 1. For each placeholder, read the image file from `raw/<book-name>/images/` using the Read tool (which supports images)
 2. Generate a description of the image content (diagrams, charts, code, etc.)
-3. Replace the placeholder with either:
-   - A text description (for diagrams/concepts that can be conveyed in prose)
-   - An image reference + description (for cases where the visual matters): copy to `content/images/<book>-chNN-img-MM.ext` and reference with `![Description](../images/<book>-chNN-img-MM.ext)`
-4. If the image file doesn't exist or can't be read, replace with `[Image could not be extracted]`
+3. **CRITICAL: Images must stay inline where the placeholder appears in the chunk text.** The placeholder `[Image: ...]` is already positioned near the relevant content — keep the image reference there.
+4. Copy the image file from `raw/<book-name>/images/` to `content/images/<book-name>/` (preserve original filename)
+5. Replace the placeholder with the image reference: `![Description](../images/<book-name>/page-NNN-img-MM.ext)`
+   - Use the description from step 2 in the alt text
+6. If the image file doesn't exist or can't be read, replace with `[Image could not be extracted]`
+7. **DO NOT create a separate `## Images` section** — all images must remain inline with their relevant content
+
+**Image directory structure:**
+- Source: `raw/<book-name>/images/page-NNN-fig-XX.png`
+- Destination: `content/images/<book-name>/page-NNN-fig-XX.png`
+- Reference: `../images/<book-name>/page-NNN-fig-XX.png` (relative from content/books/)
 
 The user will see image descriptions during the interactive discussion (step 3) and can correct or refine them.
 
@@ -64,6 +71,11 @@ Based on the discussion:
 - For multi-chunk chapters: accumulate understanding, write only when complete
 - Include YAML frontmatter, ~300 words, `[[wiki links]]` for concepts
 - Link back to book overview: `Part of [[<book-name>]]`
+- **Structure**: H1 title → 2-4 paragraphs flowing prose → `Part of [[...]]` → `## Related`
+- **Use bold section markers for key topics** (`**Topic.**` at paragraph start), NOT `##` headers
+- **No tables** — convert table content to prose descriptions
+- **No subsections with ## headers** — chapter summaries are single-section prose
+- The summary should capture ALL key points from the chapter, but in concise prose form
 
 **Book overview page** (`content/books/<book-name>.md`):
 - Create on first chunk, update on subsequent chunks

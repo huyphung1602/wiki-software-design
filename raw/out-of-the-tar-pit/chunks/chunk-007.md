@@ -156,6 +156,8 @@ The obvious implication of the above is that there are large amounts of
 accidental state in typical systems. In fact, it is our belief that the vast
 majority of state (as encountered in typical contemporary systems) simply
 26
+[Image: page-026-fig-01.png]
+
 
 ---
 Page 27
@@ -451,6 +453,8 @@ section 7.1 — i.e. we are recommending that the formal requirements adopt
 the logic / state split.
 The top three rows of the table correspond to components which we
 33
+[Image: page-033-fig-01.png]
+
 
 ---
 Page 34
@@ -535,6 +539,8 @@ the logic specification, and changes to the logic specification may re-
 quirechangestothespecificationforaccidentalstateandcontrol. The
 logic specification will make no reference to any part of the accidental
 35
+[Image: page-035-fig-01.png]
+
 
 ---
 Page 36

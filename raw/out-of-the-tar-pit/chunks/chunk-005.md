@@ -1,4 +1,4 @@
-# 5 Classical Approaches to Managing Complexity
+# 5 Classical Approaches
 
 5 Classical approaches to managing complexity
 The di↵erent classical approaches to managing complexity can perhaps best
