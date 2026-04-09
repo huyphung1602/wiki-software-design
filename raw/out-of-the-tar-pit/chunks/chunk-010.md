@@ -1,4 +1,4 @@
-# 10 Example of an FRP System
+# 10 Example of an FRP system
 
 10 Example of an FRP system
 We now examine a simple example FRP system. The system is designed

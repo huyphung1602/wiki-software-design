@@ -20,9 +20,9 @@ Complexity is anything related to the structure of a software system that makes 
 
 ### Three Symptoms
 
-1. **[[change-amplification]]**: A seemingly simple change requires modifications in many different places
-2. **[[cognitive-load]]**: How much a developer must know to complete a task — lines of code is a misleading measure
-3. **[[unknown-unknowns]]**: Not obvious what code must be modified or what information is needed — the worst symptom
+1. **[[change-amplification|change amplification]]**: A seemingly simple change requires modifications in many different places
+2. **[[cognitive-load|cognitive load]]**: How much a developer must know to complete a task — lines of code is a misleading measure
+3. **[[unknown-unknowns|unknown unknowns]]**: Not obvious what code must be modified or what information is needed — the worst symptom
 
 ### Two Root Causes
 

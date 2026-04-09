@@ -31,6 +31,9 @@ The traditional approach to data validation scatters imperative checks throughou
 
 Integrity constraints directly address [[state-and-complexity|the complexity caused by mutable state]]. Without constraints, any part of the system can put state into any configuration, and every consumer must handle all possible configurations — including invalid ones. With constraints, the state space is narrowed to valid configurations only. Every consumer can assume the invariants hold, reducing the defensive code they must write.
 
+## Cases
+- [[estate-agency-frp]] — the Estate Agency system demonstrates domain-specific integrity constraints: no bidding on own property, max 50 premium listings, max 10 offers per property — all enforced declaratively by the infrastructure (from Out of the Tar Pit)
+
 ## Related
 - [[relational-model]] — the framework where integrity constraints are most naturally expressed
 - [[declarative-programming]] — the paradigm that makes constraints concise

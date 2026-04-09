@@ -44,7 +44,6 @@ Present the synthesized answer. Then ask:
 If user says yes:
 - Create the new page in the appropriate directory (`content/concepts/` or `content/comparisons/`)
 - Update `content/index.md`
-- Append to `content/log.md` with format: `## [YYYY-MM-DD] query | <topic>`
 
 ## What NOT to Do
 
@@ -54,4 +53,4 @@ If user says yes:
 
 ✅ DO cite wiki pages with `[[links]]`
 ✅ DO note gaps in the wiki's knowledge
-✅ DO update index.md and log.md if a new page is created
+✅ DO update index.md if a new page is created

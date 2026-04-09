@@ -16,15 +16,15 @@ Reads one chunk at a time, discusses key takeaways with the user, then creates/u
 
 ## Invocation
 
-- `/wiki-ingest <book-name>` — ingest the next uningested chunk (checks log.md for progress)
 - `/wiki-ingest <book-name> <chunk-number>` — ingest a specific chunk
+- `/wiki-ingest <book-name>` — ask user which chunk to ingest
 
 ## Step-by-Step
 
 ### 1. Determine which chunk to ingest
 
 - If chunk number specified: read that chunk
-- Otherwise: scan `content/log.md` for the last ingested chunk of this book, then read the next one
+- Otherwise: ask the user which chunk to ingest
 - Read `raw/<book-name>/map.md` to get the chapter mapping for this chunk
 
 ### 2. Read and analyze the chunk
@@ -32,6 +32,26 @@ Reads one chunk at a time, discusses key takeaways with the user, then creates/u
 - Read `raw/<book-name>/chunks/chunk-NNN.md`
 - If map.md shows this chunk continues a chapter from a previous chunk, also read the prior chunk(s)
 - Identify key concepts, arguments, and takeaways
+
+### 2b. Handle images (if present)
+
+If the chunk text contains `[Image: page-NNN-img-MM.ext]` placeholders:
+
+1. For each placeholder, read the image file from `raw/<book-name>/images/` using the Read tool (which supports images)
+2. Generate a description of the image content (diagrams, charts, code, etc.)
+3. **CRITICAL: Images must stay inline where the placeholder appears in the chunk text.** The placeholder `[Image: ...]` is already positioned near the relevant content — keep the image reference there.
+4. Copy the image file from `raw/<book-name>/images/` to `content/images/<book-name>/` (preserve original filename)
+5. Replace the placeholder with the image reference: `![Description](../images/<book-name>/page-NNN-img-MM.ext)`
+   - Use the description from step 2 in the alt text
+6. If the image file doesn't exist or can't be read, replace with `[Image could not be extracted]`
+7. **DO NOT create a separate `## Images` section** — all images must remain inline with their relevant content
+
+**Image directory structure:**
+- Source: `raw/<book-name>/images/page-NNN-fig-XX.png`
+- Destination: `content/images/<book-name>/page-NNN-fig-XX.png`
+- Reference: `../images/<book-name>/page-NNN-fig-XX.png` (relative from content/books/)
+
+The user will see image descriptions during the interactive discussion (step 3) and can correct or refine them.
 
 ### 3. Present to user (INTERACTIVE — pause here)
 
@@ -51,6 +71,11 @@ Based on the discussion:
 - For multi-chunk chapters: accumulate understanding, write only when complete
 - Include YAML frontmatter, ~300 words, `[[wiki links]]` for concepts
 - Link back to book overview: `Part of [[<book-name>]]`
+- **Structure**: H1 title → 2-4 paragraphs flowing prose → `Part of [[...]]` → `## Related`
+- **Use bold section markers for key topics** (`**Topic.**` at paragraph start), NOT `##` headers
+- **No tables** — convert table content to prose descriptions
+- **No subsections with ## headers** — chapter summaries are single-section prose
+- The summary should capture ALL key points from the chapter, but in concise prose form
 
 **Book overview page** (`content/books/<book-name>.md`):
 - Create on first chunk, update on subsequent chunks
@@ -146,25 +171,14 @@ When the chunk discusses a concept that already has a comparison page:
 
 Do NOT create new comparison pages during ingest — that's the wiki-compare skill's job. Only update existing ones if the chunk directly addresses a known tension.
 
-**Overview page** (`content/overview.md`):
-- Update the high-level synthesis with new themes or connections
-
 ### 5. Update index
 
 Update `content/index.md`:
 - Add new pages under the appropriate category (Books, Concepts)
 - Update page counts and source counts on existing entries
+- Update the "Key Themes" or "Current Sources" section if significant new themes emerge
 
-### 6. Update log
-
-Append to `content/log.md`:
-```markdown
-## [YYYY-MM-DD] ingest | <book-name> | Ch <N>: <title>
-- Created: [[page-a]], [[page-b]]
-- Updated: [[overview]], [[index]]
-```
-
-### 7. Ask about next chunk
+### 6. Ask about next chunk
 
 Tell the user which chunk was just ingested and ask if they want to continue with the next one.
 
@@ -180,10 +194,9 @@ Tell the user which chunk was just ingested and ask if they want to continue wit
 
 ❌ DO NOT skip the interactive discussion (step 3)
 ❌ DO NOT modify files in `raw/`
-❌ DO NOT write log.md before all wiki pages are written (breaks resume)
 ❌ DO NOT proceed to next chunk without user confirmation
 
 ✅ DO pause for user input after presenting takeaways
-✅ DO update index.md and log.md after every chunk
+✅ DO update index.md after every chunk
 ✅ DO use `[[wiki links]]` liberally
 ✅ DO check if concept pages already exist before creating new ones

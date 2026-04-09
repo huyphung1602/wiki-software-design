@@ -2,13 +2,13 @@
 
 You are maintaining a personal knowledge site powered by Quartz. The content has three layers:
 
-1. **raw/** — Immutable source documents (extracted text from PDFs). Never modify these.
+1. **raw/** — Immutable source documents (extracted text and images from PDFs). Never modify these (exception: pdf-extractor creates and may overwrite `raw/` content during extraction).
 2. **content/** — LLM-owned markdown pages. You create and maintain all files here.
 3. **CLAUDE.md** — This file. The rules you follow.
 
-**Deployment**: Quartz v4 publishes the `content/` folder as a wiki-style site.
+**Deployment**: Quartz v4 publishes the `content/` folder as a wiki-style site. `content/index.md` is the home page — it includes the wiki overview/About section at the top, followed by lists of all Books, Concepts, and Comparisons.
 
-**Tools**: Other tools in `.claude/skills/` handle content generation (pdf-extractor, semantic-chunker) and parsing (wiki-ingest, wiki-query, wiki-lint, wiki-compare).
+**Tools**: Other tools in `.claude/skills/` handle content generation (pdf-extractor, semantic-chunker) and parsing (wiki-ingest, wiki-query, wiki-lint, wiki-compare, wiki-cases).
 
 ## Content Conventions
 
@@ -24,8 +24,8 @@ You are maintaining a personal knowledge site powered by Quartz. The content has
   ---
   ```
 - **Linking**: First mention of a concept per page is always a `[[wiki-link]]`. Subsequent mentions can be plain text.
-- **Page structure**: H1 title → short intro paragraph → content sections → `## Related` section at bottom with links to related pages.
-- **Word targets**: Chapter summaries ~300 words, concept pages ~500 words. Soft targets — wiki-lint flags pages significantly over limit.
+- **Page structure**: H1 title → short intro paragraph → content sections → `## Cases` section (for concept pages) → `## Related` section at bottom with links to related pages.
+- **Word targets**: Chapter summaries ~300 words, concept pages ~500 words, case pages ~600 words. Soft targets — wiki-lint flags pages significantly over limit.
 
 ## Workflows
 
@@ -41,11 +41,7 @@ Triggered by: `/wiki-ingest <book-name> [chunk-number]`
    - `content/books/<book-name>.md` — update book overview
    - `content/concepts/<concept>.md` — create or update for each concept mentioned
    - `content/comparisons/` — note contradictions or reinforcements with existing ideas
-   - `content/overview.md` — update high-level synthesis
 5. Update `content/index.md` — add new pages, update summaries
-6. Append to `content/log.md` — format: `## [YYYY-MM-DD] ingest | <book-name> | Ch <N>: <title>`
-
-**Abort/resume**: A chunk is fully ingested only after step 6 (log.md updated). If interrupted, the next ingest re-processes that chunk.
 
 ### Query Workflow
 
@@ -68,11 +64,23 @@ Check for:
 - **Missing cross-references**: Concept pages mentioning related concepts without linking
 - **Knowledge gaps**: Topics across multiple sources lacking a synthesis/comparison page
 
-Output a report and append to `content/log.md`.
+Output a report in chat.
+
+### Cases Workflow
+
+Triggered by: `/wiki-cases <book-name>`, `/wiki-cases --url <url>`, or `/wiki-cases`
+
+1. Scan raw chunks or fetch external article for case-worthy narratives
+2. Present candidates to the user for selection (interactive)
+3. Create case pages in `content/cases/` with fragments and multi-concept tagging
+4. Update concept pages — add `## Cases` section linking to new cases
+5. Update `content/index.md`
+
+**When to run**: After wiki-ingest finishes a book, or anytime for external sources.
 
 ## Guardrails
 
-- NEVER modify files in `raw/`
-- ALWAYS update `content/index.md` and `content/log.md` after any content change
+- NEVER modify files in `raw/` (exception: pdf-extractor creates and may overwrite `raw/` content during extraction)
+- ALWAYS update `content/index.md` after any content change
 - ALWAYS ask before filing a query answer as a new page
 - When the user says "process this PDF", chain: pdf-extractor → semantic-chunker → wiki-ingest

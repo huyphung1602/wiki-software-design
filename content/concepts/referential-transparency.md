@@ -36,6 +36,9 @@ In [[functional-relational-programming]], referential transparency is the defaul
 
 Real systems must interact with the outside world — they must read input, write output, store data. These operations are inherently stateful. The solution is not to eliminate state entirely, but to quarantine it. In the FRP approach, state is isolated in the relational layer, and the logic layer remains purely referentially transparent. The key insight is that the vast majority of business logic does not need to touch state directly.
 
+## Cases
+- [[estate-agency-frp]] — the Estate Agency system's user-defined functions (priceBandForPrice, areaCodeForAddress, datesToSpeedBand) are purely functional, ensuring the logic layer is referentially transparent and independently testable (from Out of the Tar Pit)
+
 ## Related
 - [[state-and-complexity]] — the problem that referential transparency solves
 - [[functional-relational-programming]] — an architecture built on referential transparency

@@ -18,7 +18,7 @@ Configuration parameters are a common form of upward complexity push. While some
 
 [[pull-complexity-downwards|Pulling complexity down]] works best when three criteria are met: the complexity relates to the class's existing functionality, it simplifies code elsewhere, and it simplifies the class's interface. The text class example: a character-oriented API pulls line-splitting logic into the class, producing a simpler interface and simpler UI code. But pulling UI knowledge (backspace behavior) into the text class fails — it creates [[information-leakage]] rather than simplification.
 
-The principle is another path to [[deep-modules]]: more complexity in the implementation, less exposed in the interface.
+The principle is another path to [[deep-modules|deep modules]]: more complexity in the implementation, less exposed in the interface.
 
 ## Related
 - [[pull-complexity-downwards]] — the core principle
