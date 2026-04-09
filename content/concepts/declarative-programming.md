@@ -15,7 +15,7 @@ Declarative programming specifies WHAT a system should do, not HOW it should do 
 
 The key benefit of declarative programming is the elimination of unnecessary ordering. When you write `SELECT name FROM employees WHERE department = 'Engineering'`, you do not specify whether the database should scan the table, use an index, or filter first. You describe the result you want, and the system determines the optimal execution plan. The ordering is accidental — it is managed by the infrastructure, not specified by the developer.
 
-This principle applies far beyond database queries. [[Integrity-constraints]] are declarative: they state conditions that must always hold without specifying when or how to check them. Derivation rules in [[functional-relational-programming]] are declarative: they define how to compute derived values from essential state without specifying evaluation order.
+This principle applies far beyond database queries. [[integrity-constraints]] are declarative: they state conditions that must always hold without specifying when or how to check them. Derivation rules in [[functional-relational-programming]] are declarative: they define how to compute derived values from essential state without specifying evaluation order.
 
 ## Declarative vs Imperative
 

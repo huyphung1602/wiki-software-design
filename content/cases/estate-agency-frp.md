@@ -1,7 +1,7 @@
 ---
 title: Estate Agency FRP System
 tags: [case, functional-relational-programming, relational-model, architecture]
-concepts: [functional-relational-programming, accidental-state, relational-model, integrity-constraints, referential-transparency, data-independence]
+concepts: [functional-relational-programming, essential-state, accidental-state, relational-model, integrity-constraints, referential-transparency, data-independence]
 sources: [out-of-the-tar-pit]
 crossroad: false
 created: 2026-04-09
@@ -34,6 +34,8 @@ def relvar Commission :: {priceBand, areaCode, saleSpeed, commission}
 `Property` records each listing. `Offer` records every bid ever made. `Decision` records each owner's response to an offer. `Room` and `Floor` describe the physical property. `Commission` defines how agents are paid based on price band, area, and sale speed.
 
 The design is purely relational — relationships between entities are expressed through matching attribute values, not through object references or foreign key pointers baked into the structure.
+
+Illustrates: [[essential-state]], [[relational-model]]
 
 ### Thirteen Derived Relations — Computed on Demand
 

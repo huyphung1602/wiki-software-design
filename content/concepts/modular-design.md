@@ -15,7 +15,7 @@ Each module has an **interface** (what others must know to use it) and an **impl
 
 The goal is to minimize dependencies between modules. Developers should understand the interface and implementation of the module they're working on, plus only the interfaces of modules they invoke — never the implementations of other modules.
 
-The key metric is **depth**: [[deep-modules]] (simple interface, complex implementation) maximize the complexity hidden per unit of interface exposed. [[Shallow-modules]] do the opposite. The cultural bias toward many small classes — [[classitis]] — produces shallow modules whose interfaces accumulate into system-level complexity.
+The key metric is **depth**: [[deep-modules]] (simple interface, complex implementation) maximize the complexity hidden per unit of interface exposed. [[shallow-modules]] do the opposite. The cultural bias toward many small classes — [[classitis]] — produces shallow modules whose interfaces accumulate into system-level complexity.
 
 Good [[abstractions]] are the result: simplified views that omit unimportant details while preserving everything that matters. Information should be hidden within modules, not leaked across them. Modules should be general-purpose, not narrowly tailored to current needs.
 

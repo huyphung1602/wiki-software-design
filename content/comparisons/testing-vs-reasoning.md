@@ -21,11 +21,11 @@ Concurrency makes things even worse: the same test with the same inputs and the 
 
 ## Reasoning: More Powerful, More Fragile
 
-[[Reasoning]] examines a system from the inside. A developer reads the code and constructs a mental model of its behavior. Reasoning can cover the entire state space by working at the level of invariants: "for all possible states, property P holds."
+[[reasoning]] examines a system from the inside. A developer reads the code and constructs a mental model of its behavior. Reasoning can cover the entire state space by working at the level of invariants: "for all possible states, property P holds."
 
 The key advantage: improvements in reasoning prevent errors from being created, while improvements in testing can only detect existing errors. As Dijkstra said: "Those who want really reliable software will discover that they must find means of avoiding the majority of bugs to start with."
 
-[[Referential-transparency]] makes reasoning far more effective. When a function depends only on its arguments, the developer can reason about it in isolation using equational reasoning. State contamination is eliminated.
+[[referential-transparency]] makes reasoning far more effective. When a function depends only on its arguments, the developer can reason about it in isolation using equational reasoning. State contamination is eliminated.
 
 ## The Tension
 

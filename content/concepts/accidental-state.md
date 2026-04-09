@@ -25,7 +25,7 @@ The distinction is not always obvious. A shopping cart's contents might seem ess
 
 ## The Functional Relational Approach
 
-[[Functional-relational-programming]] addresses accidental state by making it a rule: do not store what can be computed. Derived values are calculated by [[referential-transparency|pure functions]] over essential state. There is no cache to invalidate because there is no cache. The computation is deterministic and cheap enough to repeat.
+[[functional-relational-programming]] addresses accidental state by making it a rule: do not store what can be computed. Derived values are calculated by [[referential-transparency|pure functions]] over essential state. There is no cache to invalidate because there is no cache. The computation is deterministic and cheap enough to repeat.
 
 When performance demands caching, the cache is treated as an accidental component — managed by the infrastructure layer, invisible to the essential logic. The cache is a performance optimization, not a design feature. Its correctness is verified by comparing its output to the pure function it accelerates.
 
@@ -33,6 +33,7 @@ When performance demands caching, the cache is treated as an accidental componen
 - [[estate-agency-frp]] — the Estate Agency system distinguishes essential state (Property, Offer stored as relations) from accidental state (caches, performance hints managed by infrastructure). Feeders/observers ensure derived data never masquerades as essential state (from Out of the Tar Pit)
 
 ## Related
+- [[essential-state]] — the counterpart: state that must be retained because the problem requires it
 - [[essential-vs-accidental-complexity]] — the framework for distinguishing necessary from unnecessary
 - [[state-and-complexity]] — why all state, including accidental state, causes complexity
 - [[functional-relational-programming]] — the architecture that eliminates accidental state

@@ -30,7 +30,7 @@ Each of these introduces hidden dependencies that make the function harder to un
 
 ## Practical Benefits
 
-In [[functional-relational-programming]], referential transparency is the default. Essential logic is expressed as pure functions over relations, with no hidden state and no side effects. This makes the logic layer independently testable and composable. [[Cognitive-load]] drops because each function can be understood on its own. [[Abstractions]] become more reliable because they do not hide stateful surprises.
+In [[functional-relational-programming]], referential transparency is the default. Essential logic is expressed as pure functions over relations, with no hidden state and no side effects. This makes the logic layer independently testable and composable. [[cognitive-load]] drops because each function can be understood on its own. [[abstractions]] become more reliable because they do not hide stateful surprises.
 
 ## The Trade-Off
 

@@ -25,11 +25,11 @@ In the relational model, there are no access paths. Any relation can be joined w
 
 ## Relation to Information Hiding
 
-Data independence is [[information-hiding]] applied specifically to data structures. The same principle applies: hide details that users do not need to know, expose only the logical interface. [[Abstractions]] in the code sense and data independence in the storage sense are two expressions of the same idea — separation of what matters from what does not.
+Data independence is [[information-hiding]] applied specifically to data structures. The same principle applies: hide details that users do not need to know, expose only the logical interface. [[abstractions]] in the code sense and data independence in the storage sense are two expressions of the same idea — separation of what matters from what does not.
 
 ## In Functional Relational Programming
 
-[[Functional-relational-programming]] relies on data independence to maintain its separation of essential state from accidental components. Essential state is defined as relations with logical structure. The physical storage — whether in-memory data structures, files, or a database — is an accidental detail handled by the infrastructure layer.
+[[functional-relational-programming]] relies on data independence to maintain its separation of essential state from accidental components. Essential state is defined as relations with logical structure. The physical storage — whether in-memory data structures, files, or a database — is an accidental detail handled by the infrastructure layer.
 
 ## Cases
 - [[estate-agency-frp]] — the Estate Agency system uses the relational model to achieve data independence: the accidental component specifies physical storage separately from the logical model, and derived relvars are maintained automatically by the infrastructure (from Out of the Tar Pit)

@@ -19,7 +19,7 @@ Moseley and Marks identify a fundamental limitation of testing: a test using one
 
 Concurrency compounds the problem further: running the same test with the same inputs and the same starting state may produce different results on different runs. This is as bad as it gets — testing cannot even guarantee result consistency.
 
-[[Referential-transparency]] dramatically improves testing effectiveness by eliminating the state problem. When a function depends only on its arguments, testing it requires only providing inputs and checking outputs — no state setup or teardown. This is one of the strongest practical arguments for functional programming.
+[[referential-transparency]] dramatically improves testing effectiveness by eliminating the state problem. When a function depends only on its arguments, testing it requires only providing inputs and checking outputs — no state setup or teardown. This is one of the strongest practical arguments for functional programming.
 
 Despite its limitations, testing remains useful as a supplementary validation mechanism. The key insight is that [[reasoning]] about code is more important than testing — and both degrade as [[complexity]] increases.
 

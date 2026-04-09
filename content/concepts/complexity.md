@@ -17,7 +17,7 @@ Complexity is the overarching enemy in software design. Ousterhout argues that t
 
 Complexity accumulates incrementally as a system grows. It manifests as subtle dependencies between components, making it harder for programmers to understand and modify the system. Left unchecked, complexity makes development progressively slower and more error-prone.
 
-The book treats complexity as the central problem that all its design principles address: [[deep-modules]], [[information-hiding]], [[strategic-programming]], [[choosing-names|consistent naming]], and so on are all ultimately in service of reducing complexity. Deep modules are the primary structural tool — they hide the maximum complexity behind the minimum interface. [[Shallow-modules]] and [[classitis]] are anti-patterns because they add interface complexity without hiding proportionally more implementation complexity.
+The book treats complexity as the central problem that all its design principles address: [[deep-modules]], [[information-hiding]], [[strategic-programming]], [[choosing-names|consistent naming]], and so on are all ultimately in service of reducing complexity. Deep modules are the primary structural tool — they hide the maximum complexity behind the minimum interface. [[shallow-modules]] and [[classitis]] are anti-patterns because they add interface complexity without hiding proportionally more implementation complexity.
 
 ## In Out of the Tar Pit
 

@@ -20,7 +20,7 @@ The file system illustrates both. Its abstraction correctly omits block allocati
 
 Module interfaces contain both **formal** elements (signatures, types — specified in code, checked by the language) and **informal** elements (behavior, constraints, usage requirements — described in comments, not machine-checkable). For most interfaces, the informal aspects are larger and more complex than the formal aspects. This is why comments and documentation are essential to good abstractions.
 
-The key design skill: understanding what is important and finding designs that minimize the amount of information that is important. [[Deep-modules]] are good abstractions — they omit the maximum amount of unimportant detail while preserving everything that matters.
+The key design skill: understanding what is important and finding designs that minimize the amount of information that is important. [[deep-modules]] are good abstractions — they omit the maximum amount of unimportant detail while preserving everything that matters.
 
 Specialization creates false abstractions. A text class with a `backspace()` method purports to hide which characters are deleted, but UI developers need to know this — they'll read the implementation anyway. The abstraction adds obscurity rather than reducing it. A general-purpose `delete(start, end)` is a better abstraction: it doesn't pretend to hide what the caller needs to know. When details are important, make them explicit and obvious rather than hiding them behind a misleading interface.
 

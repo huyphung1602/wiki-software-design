@@ -17,7 +17,7 @@ State introduces **exponential growth in possible system configurations**. A sys
 
 State **contaminates surrounding code**. Any code that depends on stateful data must account for all possible values of that state. A function that reads a global variable cannot be understood in isolation — you must trace every path that might have set that variable. This violates [[referential-transparency]], making informal reasoning about code far more difficult. The contamination spreads outward: code that calls code that touches state is itself tainted.
 
-State makes **testing exponentially harder**. To test a stateful system, you must set up the correct state before each test case and tear it down afterward. The combinatorial explosion means most state combinations go untested. [[Testing-vs-reasoning]] shows that both testing and reasoning degrade with state, but reasoning degrades more gracefully because it can work at the level of invariants rather than enumerating cases.
+State makes **testing exponentially harder**. To test a stateful system, you must set up the correct state before each test case and tear it down afterward. The combinatorial explosion means most state combinations go untested. [[testing-vs-reasoning]] shows that both testing and reasoning degrade with state, but reasoning degrades more gracefully because it can work at the level of invariants rather than enumerating cases.
 
 ## Kinds of State
 
@@ -25,7 +25,7 @@ Moseley and Marks distinguish between **essential state** — state that is inhe
 
 ## The Solution Direction
 
-[[Functional-relational-programming]] addresses state by isolating it into relations managed by the relational model, while the rest of the system uses pure functions with no hidden state. This separation ensures that the vast majority of code is [[referential-transparency|referentially transparent]] and can be reasoned about and tested independently of state.
+[[functional-relational-programming]] addresses state by isolating it into relations managed by the relational model, while the rest of the system uses pure functions with no hidden state. This separation ensures that the vast majority of code is [[referential-transparency|referentially transparent]] and can be reasoned about and tested independently of state.
 
 Ousterhout, in [[a-philosophy-of-software-design-ch02]], approaches complexity from a different angle — focusing on dependencies and obscurity rather than state per se — but the underlying insight is compatible: unnecessary dependencies (often caused by shared state) are a primary driver of complexity.
 

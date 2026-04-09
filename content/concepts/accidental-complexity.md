@@ -20,7 +20,7 @@ The three primary sources of accidental complexity are:
 - **Explicit control flow**: forcing developers to specify the order of operations when the problem domain often doesn't care about order. The programmer is forced to over-specify.
 - **Code volume**: much code exists solely to manage state and control flow. Reducing these sources automatically reduces code volume.
 
-If most complexity is accidental, then significant simplification is achievable through better architectural choices. [[Functional-relational-programming]] aims to eliminate accidental complexity by separating essential state (stored as relations), essential logic (expressed as pure functions and relational algebra), and accidental concerns (isolated in a separate component). The system should still function correctly if all accidental components are removed — just more slowly.
+If most complexity is accidental, then significant simplification is achievable through better architectural choices. [[functional-relational-programming]] aims to eliminate accidental complexity by separating essential state (stored as relations), essential logic (expressed as pure functions and relational algebra), and accidental concerns (isolated in a separate component). The system should still function correctly if all accidental components are removed — just more slowly.
 
 Accidental state specifically includes caches, memoized results, precomputed aggregations, and any derived data that could be re-derived from essential state on demand. In the ideal world, none of this would be stored.
 

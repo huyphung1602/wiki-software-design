@@ -13,13 +13,13 @@ The distinction between essential and accidental complexity originates with Fred
 
 ## Essential Complexity: Inherent and Unavoidable
 
-[[Essential-complexity]] is what the development team would have to deal with even in an ideal world. It includes the data users input, the business rules that govern behavior, and the constraints that must always hold. Even [[functional-relational-programming]], which aggressively strips away accidental concerns, retains essential state as relations and essential logic as derived definitions and [[integrity-constraints]].
+[[essential-complexity]] is what the development team would have to deal with even in an ideal world. It includes the data users input, the business rules that govern behavior, and the constraints that must always hold. Even [[functional-relational-programming]], which aggressively strips away accidental concerns, retains essential state as relations and essential logic as derived definitions and [[integrity-constraints]].
 
 The test: could you produce a correct system without being concerned with this complexity? If not, it is essential.
 
 ## Accidental Complexity: Eliminable and Dominant
 
-[[Accidental-complexity]] is everything else — complexity introduced by mutable [[state-and-complexity|state]], explicit [[control-flow-complexity|control flow]], code volume, caching strategies, threading models, and distribution patterns. None of these are inherent to the problem domain; they are implementation artifacts.
+[[accidental-complexity]] is everything else — complexity introduced by mutable [[state-and-complexity|state]], explicit [[control-flow-complexity|control flow]], code volume, caching strategies, threading models, and distribution patterns. None of these are inherent to the problem domain; they are implementation artifacts.
 
 ## The Tension
 

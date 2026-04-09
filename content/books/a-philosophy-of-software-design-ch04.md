@@ -14,9 +14,9 @@ This chapter introduces the foundational technique for managing [[complexity]]: 
 
 Interfaces contain both formal elements (signatures, types — enforced by the language) and informal elements (behavior, constraints — described in comments). The informal aspects are usually larger and more complex. Well-specified interfaces help eliminate [[unknown-unknowns]] by indicating exactly what developers need to know.
 
-The chapter's central concept is module depth. [[Deep-modules]] provide powerful functionality through simple interfaces — Unix I/O is the example, with five system calls backed by hundreds of thousands of lines. [[Shallow-modules]] are the anti-pattern: complex interfaces relative to the functionality they provide, adding system complexity without compensating benefit. A trivial wrapper method that just delegates to a data structure is worse than useless — it adds an interface to learn while hiding nothing.
+The chapter's central concept is module depth. [[deep-modules]] provide powerful functionality through simple interfaces — Unix I/O is the example, with five system calls backed by hundreds of thousands of lines. [[shallow-modules]] are the anti-pattern: complex interfaces relative to the functionality they provide, adding system complexity without compensating benefit. A trivial wrapper method that just delegates to a data structure is worse than useless — it adds an interface to learn while hiding nothing.
 
-[[Abstractions]] can fail two ways: including unimportant details (bloats cognitive load) or omitting important ones (false abstraction, creates obscurity). The key design skill is understanding what matters and minimizing that set.
+[[abstractions]] can fail two ways: including unimportant details (bloats cognitive load) or omitting important ones (false abstraction, creates obscurity). The key design skill is understanding what matters and minimizing that set.
 
 The chapter names [[classitis|classitis]] as the cultural disease producing shallow modules: the belief that "classes are good, so more classes are better." Java I/O (three objects to open a buffered file) vs. Unix I/O (one call) illustrates the contrast. The principle: make the common case simple, keep advanced features available but out of the way.
 

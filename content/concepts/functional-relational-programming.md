@@ -27,7 +27,7 @@ FRP separates a system into three distinct components:
 
 **Essential logic uses pure functions.** Derived values (a customer's total spending, an account's available credit) are computed from essential state by [[referential-transparency|pure functions]], not stored as [[accidental-state|cached mutable state]]. This eliminates cache invalidation bugs and reduces the state space.
 
-**[[Integrity-constraints]] replace imperative validation.** Business rules are expressed as declarative conditions that must always hold, defined once and enforced automatically, rather than scattered as validation code across the system.
+**[[integrity-constraints]] replace imperative validation.** Business rules are expressed as declarative conditions that must always hold, defined once and enforced automatically, rather than scattered as validation code across the system.
 
 **Control flow is minimized.** By using [[declarative-programming|declarative specifications]], the system avoids unnecessary ordering constraints. The architecture treats control flow as accidental — something to be managed by the infrastructure, not specified by the developer.
 

@@ -115,7 +115,9 @@ This wiki is a personal knowledge base on software design, built incrementally f
 - [[declarative-programming]] — Specifying what is required, not how (1 source)
 - [[integrity-constraints]] — Declarative, non-interacting rules for data consistency (1 source)
 - [[data-independence]] — Separation of logical model from physical storage (1 source)
+- [[access-path-independence]] — No predefined navigation paths between data (1 source)
 - [[accidental-state]] — State that can be eliminated or separated from essential logic (1 source)
+- [[essential-state]] — State that must be retained because the problem domain requires it (1 source)
 - [[testing]] — Black-box validation: observing behavior with specific inputs (1 source)
 - [[reasoning]] — White-box analysis: understanding code through mental simulation (1 source)
 
