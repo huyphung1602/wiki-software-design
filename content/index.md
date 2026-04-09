@@ -8,8 +8,26 @@ updated: 2026-04-08
 
 # Wiki Index
 
-## Overview
-- [[overview]] — High-level synthesis
+## About This Wiki
+
+This wiki is a personal knowledge base on software design, built incrementally from book sources. It explores [[complexity]] as the central antagonist, examining how to decompose problems, structure systems, and manage state.
+
+### Current Sources
+
+- **A Philosophy of Software Design** (Ousterhout, 2021) — 23 chapters. Focus: [[problem-decomposition]], [[strategic-programming]], [[modular-design]], [[continuous-design]].
+- **Out of the Tar Pit** (Moseley & Marks, 2006) — 12 sections. Focus: [[state-and-complexity|state]], [[control-flow-complexity|control]], [[functional-relational-programming]] architecture.
+
+### Key Themes
+
+- [[complexity]] is the root problem — most is [[accidental-complexity|accidental]], eliminable through design
+- [[state-and-complexity|State]] is the biggest complexity driver — mutable state creates exponential scenarios
+- Three symptoms: [[change-amplification]], [[cognitive-load]], [[unknown-unknowns]]
+- Two root causes: [[dependencies-and-obscurity]]
+- Architectures: [[functional-relational-programming|FRP]] separates essential state, essential logic, accidental components
+- [[declarative-programming]] over imperative — specify WHAT, not HOW
+- [[reasoning|Reasoning]] trumps testing — understand code through mental simulation
+- [[strategic-programming|Strategic investment]] — 10-20% design time, [[continuous-design|continuous]] attention
+- [[deep-modules]] are ideal — simple interface, powerful functionality
 
 ## Books
 - [[a-philosophy-of-software-design]] — Ousterhout, 2021 (23 chapters ingested)

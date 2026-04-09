@@ -89,16 +89,9 @@ Add or append to `## Cases` section on each relevant concept page. This section 
 
 If the concept page has no `## Cases` section, add it before `## Related`. If it has no `## Related` either, add `## Cases` at the end.
 
-### 5. Update index and log
+### 5. Update index
 
 Add new case pages to `content/index.md` under a **Cases** category.
-
-Append to `content/log.md`:
-```markdown
-## [YYYY-MM-DD] cases | <book-name> | <case-title>
-- Created: [[case-a]], [[case-b]]
-- Updated: [[concept-x]], [[concept-y]], [[index]]
-```
 
 ### 6. Ask about next steps
 
@@ -126,9 +119,9 @@ Write to `content/cases/` with fragments and multi-concept tagging.
 
 Add or append to `## Cases` section on relevant concept pages.
 
-### 6. Update index and log
+### 6. Update index
 
-Add to `content/index.md` under Cases category. Append to `content/log.md`.
+Add to `content/index.md` under Cases category.
 
 ## Step-by-Step: Crossroad Scanning (`/wiki-cases`)
 
@@ -150,7 +143,7 @@ Set `crossroad: true` in frontmatter for approved cases.
 
 ### 5. Update log
 
-Append to `content/log.md`.
+Append brief summary to the output.
 
 ## Step-by-Step: Concept-Based Search (`/wiki-cases --concept <concept>`)
 
@@ -219,11 +212,7 @@ When a new source discusses the same real-world example as an existing case:
 
 ## Abort/Resume
 
-A case is fully created only after its entry appears in `content/log.md`. If interrupted:
-
-1. Next invocation reads `content/log.md` to find the last completed case
-2. Scans `content/cases/` for pages not yet logged
-3. Resumes from the concept page update step for incomplete cases
+A case is fully created only after its case page and concept updates are complete. If interrupted:
 
 ## What NOT to Do
 
@@ -231,10 +220,9 @@ A case is fully created only after its entry appears in `content/log.md`. If int
 ❌ DO NOT modify files in `raw/`
 ❌ DO NOT treat disposable examples as cases — cases must be rich, multi-conceptual narratives
 ❌ DO NOT create single-concept cases — if it only illustrates one concept, it belongs in the concept page itself
-❌ DO NOT write log.md before all case pages and concept updates are complete
 
 ✅ DO present candidates and let the user choose
-✅ DO update index.md and log.md after creating/updating pages
+✅ DO update index.md after creating/updating pages
 ✅ DO add cross-references from concept pages back to cases
 ✅ DO look for crossroad case candidates
 ✅ DO fragment cases by concept for schema assembly

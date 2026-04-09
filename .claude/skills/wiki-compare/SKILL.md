@@ -192,19 +192,11 @@ conflict — a class with a single responsibility may still have a
 complex interface relative to its functionality.
 ```
 
-### 4. Update index and log
+### 4. Update index
 
 Update `content/index.md`:
 - Add new comparison pages under the Comparisons category
 - Update source counts on existing comparison entries
-
-Append to `content/log.md`:
-```markdown
-## [YYYY-MM-DD] compare | cross-concept
-- Created: [[comparison-a-vs-b]], [[comparison-c-vs-d]]
-- Updated: [[comparison-e-vs-f]]
-- Updated: [[index]]
-```
 
 ### 5. Update related concepts
 
@@ -221,7 +213,7 @@ For cross-source comparisons, add the link to both concept pages regardless of s
 ❌ DO NOT duplicate existing comparisons — check `content/comparisons/` first
 
 ✅ DO present candidates and let the user choose
-✅ DO update index.md and log.md after creating/updating pages
+✅ DO update index.md after creating/updating pages
 ✅ DO add cross-references back to the comparison from concept pages
 ✅ DO link to full concept pages from within comparisons
 ✅ DO look for cross-source comparisons when multiple sources exist

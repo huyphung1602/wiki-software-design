@@ -22,7 +22,7 @@ Scans all wiki pages for issues: orphans, missing pages, contradictions, stale c
 
 ### 1. Orphan pages
 
-Scan all wiki pages for `[[page-name]]` references. Build a set of pages with inbound links. Any page in `content/` not in this set (except `index.md` and `log.md`) is an orphan.
+Scan all wiki pages for `[[page-name]]` references. Build a set of pages with inbound links. Any page in `content/` not in this set (except `index.md`) is an orphan.
 
 ### 2. Missing concept pages
 
@@ -34,7 +34,7 @@ For each concept page in `content/concepts/`, read pages that share the same `ta
 
 ### 4. Stale claims
 
-Check `content/log.md` for recently ingested sources. For each recent ingest, find concept pages that share tags with the new source. Flag any that haven't been updated since the ingest date.
+Check recent git commits for ingested sources. For each recently ingested source, find concept pages that share tags with that source. Flag any that haven't been updated since the ingest date.
 
 ### 5. Missing cross-references
 
@@ -105,12 +105,7 @@ Present a structured report in chat:
 - [[case-name]] is <word-count> words (target: ~600, max: ~1200)
 ```
 
-Then append to `content/log.md`:
-
-```markdown
-## [YYYY-MM-DD] lint | full check
-- Orphans: N | Broken links: N | Contradictions: N | Stale: N | Missing refs: N | Gaps: N | Oversized: N | Orphan cases: N | Missing case links: N | Invalid crossroad: N | Oversized cases: N
-```
+Present the report in chat only (no file write).
 
 ## What NOT to Do
 
@@ -120,4 +115,3 @@ Then append to `content/log.md`:
 
 ✅ DO report all issues found
 ✅ DO suggest concrete fixes for each issue
-✅ DO append results to log.md

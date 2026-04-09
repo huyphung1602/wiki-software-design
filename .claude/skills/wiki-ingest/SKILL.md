@@ -16,15 +16,15 @@ Reads one chunk at a time, discusses key takeaways with the user, then creates/u
 
 ## Invocation
 
-- `/wiki-ingest <book-name>` — ingest the next uningested chunk (checks log.md for progress)
 - `/wiki-ingest <book-name> <chunk-number>` — ingest a specific chunk
+- `/wiki-ingest <book-name>` — ask user which chunk to ingest
 
 ## Step-by-Step
 
 ### 1. Determine which chunk to ingest
 
 - If chunk number specified: read that chunk
-- Otherwise: scan `content/log.md` for the last ingested chunk of this book, then read the next one
+- Otherwise: ask the user which chunk to ingest
 - Read `raw/<book-name>/map.md` to get the chapter mapping for this chunk
 
 ### 2. Read and analyze the chunk
@@ -171,25 +171,14 @@ When the chunk discusses a concept that already has a comparison page:
 
 Do NOT create new comparison pages during ingest — that's the wiki-compare skill's job. Only update existing ones if the chunk directly addresses a known tension.
 
-**Overview page** (`content/overview.md`):
-- Update the high-level synthesis with new themes or connections
-
 ### 5. Update index
 
 Update `content/index.md`:
 - Add new pages under the appropriate category (Books, Concepts)
 - Update page counts and source counts on existing entries
+- Update the "Key Themes" or "Current Sources" section if significant new themes emerge
 
-### 6. Update log
-
-Append to `content/log.md`:
-```markdown
-## [YYYY-MM-DD] ingest | <book-name> | Ch <N>: <title>
-- Created: [[page-a]], [[page-b]]
-- Updated: [[overview]], [[index]]
-```
-
-### 7. Ask about next chunk
+### 6. Ask about next chunk
 
 Tell the user which chunk was just ingested and ask if they want to continue with the next one.
 
@@ -205,10 +194,9 @@ Tell the user which chunk was just ingested and ask if they want to continue wit
 
 ❌ DO NOT skip the interactive discussion (step 3)
 ❌ DO NOT modify files in `raw/`
-❌ DO NOT write log.md before all wiki pages are written (breaks resume)
 ❌ DO NOT proceed to next chunk without user confirmation
 
 ✅ DO pause for user input after presenting takeaways
-✅ DO update index.md and log.md after every chunk
+✅ DO update index.md after every chunk
 ✅ DO use `[[wiki links]]` liberally
 ✅ DO check if concept pages already exist before creating new ones
