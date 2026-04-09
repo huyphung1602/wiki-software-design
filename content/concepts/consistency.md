@@ -36,7 +36,7 @@ Consistency is hard to maintain over time, especially with large teams. Three pr
 
 ## Related
 - [[obvious-code]] -- consistency makes code easier to understand at a glance
-- [[choosing-names]] -- consistent naming is a primary form of consistency
+- [[choosing-names|consistent naming]] -- consistent naming is a primary form of consistency
 - [[abstractions]] -- consistent interfaces multiply the value of learning each one
 - [[continuous-design]] -- consistency as an ongoing investment in code quality
 - [[complexity]] -- what consistency reduces

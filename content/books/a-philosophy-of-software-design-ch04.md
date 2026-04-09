@@ -18,7 +18,7 @@ The chapter's central concept is module depth. [[Deep-modules]] provide powerful
 
 [[Abstractions]] can fail two ways: including unimportant details (bloats cognitive load) or omitting important ones (false abstraction, creates obscurity). The key design skill is understanding what matters and minimizing that set.
 
-The chapter names [[classitis]] as the cultural disease producing shallow modules: the belief that "classes are good, so more classes are better." Java I/O (three objects to open a buffered file) vs. Unix I/O (one call) illustrates the contrast. The principle: make the common case simple, keep advanced features available but out of the way.
+The chapter names [[classitis|classitis]] as the cultural disease producing shallow modules: the belief that "classes are good, so more classes are better." Java I/O (three objects to open a buffered file) vs. Unix I/O (one call) illustrates the contrast. The principle: make the common case simple, keep advanced features available but out of the way.
 
 ## Related
 - [[modular-design]] — the framework this chapter builds on

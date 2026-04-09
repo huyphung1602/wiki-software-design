@@ -10,7 +10,7 @@ updated: 2026-04-09
 
 This is the theoretical core of the paper. The authors' two recommendations are: **avoid** complexity where possible, and **separate** it where not.
 
-**The ideal world.** Even in the ideal world, some state is essential -- specifically, input data that the system may need to refer to in the future. All derived data (whether immutable or mutable) corresponds to accidental state and can be omitted by re-deriving it on demand. Control is entirely accidental: the informal requirements never mention ordering, so developers should not have to specify it. The ideal approach is pure [[declarative-programming]]: specify what is required, not how.
+**The ideal world.** Even in the ideal world, some state is essential -- specifically, input data that the system may need to refer to in the future. All derived data (whether immutable or mutable) corresponds to [[accidental-state|accidental state]] and can be omitted by re-deriving it on demand. Control is entirely accidental: the informal requirements never mention ordering, so developers should not have to specify it. The ideal approach is pure [[declarative-programming]]: specify what is required, not how.
 
 ![Data type classification: essential input vs accidental derived data table](../images/out-of-the-tar-pit/page-026-fig-01.png)
 
