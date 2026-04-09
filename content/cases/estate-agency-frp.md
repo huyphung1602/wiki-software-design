@@ -1,7 +1,7 @@
 ---
 title: Estate Agency FRP System
 tags: [case, functional-relational-programming, relational-model, architecture]
-concepts: [functional-relational-programming, essential-state, accidental-state, relational-model, integrity-constraints, referential-transparency, data-independence, access-path-independence, declarative-specification, separation-of-concerns]
+concepts: [functional-relational-programming, accidental-state, relational-model, integrity-constraints, referential-transparency, data-independence]
 sources: [out-of-the-tar-pit]
 crossroad: false
 created: 2026-04-09
@@ -12,75 +12,124 @@ updated: 2026-04-09
 
 ## The Story
 
-Moseley and Russell's paper presents a complete hypothetical Estate Agency system built using Functional Relational Programming (FRP). The system manages property listings, bids from potential buyers, and agent commissions. Rather than showing toy examples, the paper walks through a realistic domain: properties have rooms and floors, buyers make offers, decisions are made on offers, and agents earn commission based on sale speed and price band.
+Moseley and Marks present a complete hypothetical Estate Agency system built using Functional Relational Programming (FRP). The domain is familiar: an agency sells properties, buyers make offers, owners accept or reject offers, and agents earn commission on successful sales.
 
-The system is specified entirely in terms of relations — no nested structures, no object references, no mutable state. The essential logic is expressed as relational algebra extended with pure user-defined functions. All integrity constraints are declared declaratively and enforced by the infrastructure. The result is a system where errors in business logic can never put the database in a "bad state" — the worst that can happen is the infrastructure rejecting a transaction that would violate a constraint.
+The system is small — six base relations, thirteen derived relations, seven integrity constraints, three user-defined functions. Yet it is complete enough to show how the FRP architecture eliminates an entire category of bugs: the "bad state" bug. In traditional systems, a bug in business logic can leave the database in an inconsistent state — a sale recorded without a matching offer, or an agent paid commission on a property that never sold. In FRP, the infrastructure rejects any transaction that would violate a constraint, before it touches the database.
 
 ## Fragments
 
-### Essential State as Relations
+### Six Base Relations — Essential State
 
-All essential state in the Estate Agency system takes the form of flat relations with no nesting. The base relvars include Property (address, price, agent, dateRegistered), Offer (address, offerDate, bidderName, bidderAddress, offerPrice), Decision (address, offerDate, bidderName, bidderAddress, accepted), Room (address, roomName, width, breadth, type), Floor (address, floorName), and Commission (priceBand, areaCode, saleSpeed, commission).
+All essential state lives in six flat relations. Each relation is a table with named, typed columns. There are no objects, no pointers, no nested structures.
 
-Notably, there are no product types — no nested records, no object references linking entities. The relational model handles all associations through attribute values rather than pointers. This design choice means the system has no "access paths" baked into the data structure — any relationship between data can be queried ad-hoc rather than being predetermined.
-
-Illustrates: [[essential-state]], [[relational-model]], [[access-path-independence]]
-
-### Derived Relations via Relational Algebra
-
-The system defines 13 derived relations using the eight relational algebra operators (restrict, project, product, union, intersection, difference, join, divide) extended with aggregation. These include internal derived relations like RoomInfo (extends Room with computed area), Acceptance (accepted offers), Rejection (rejected offers), PropertyInfo (extends Property with computed priceBand, areaCode, numberOfRooms, squareFeet), CurrentOffer (most recent offer per bidder per property), and external derived relations like OpenOffers (current offers without a decision), PropertyForWebSite (unsold properties for external display), and CommissionDue (total commission per agent).
-
-The derived relations are defined declaratively — for example:
-
-```
-RoomInfo = extend(Room, (roomSize = width*breadth))
-OpenOffers = join(CurrentOffer, minus(project_away(CurrentOffer, offerPrice), project_away(Decision, accepted decisionDate)))
+```frp
+def relvar Property :: {address, price, photo, agent, dateRegistered}
+def relvar Offer :: {address, offerDate, bidderName, bidderAddress, offerPrice}
+def relvar Decision :: {address, offerDate, bidderName, bidderAddress, decisionDate, accepted}
+def relvar Room :: {address, roomName, width, breadth, type}
+def relvar Floor :: {address, roomName, floor}
+def relvar Commission :: {priceBand, areaCode, saleSpeed, commission}
 ```
 
-Because these are derived rather than stored, the infrastructure maintains them automatically as base data changes. No triggers, no materialized view maintenance code — just equations that always hold.
+`Property` records each listing. `Offer` records every bid ever made. `Decision` records each owner's response to an offer. `Room` and `Floor` describe the physical property. `Commission` defines how agents are paid based on price band, area, and sale speed.
 
-Illustrates: [[declarative-specification]], [[relational-model]], [[data-independence]]
+The design is purely relational — relationships between entities are expressed through matching attribute values, not through object references or foreign key pointers baked into the structure.
 
-### Integrity Constraints as Boolean Expressions
+### Thirteen Derived Relations — Computed on Demand
 
-The system specifies integrity constraints declaratively using relational algebra expressions that must evaluate to true at all times. The infrastructure rejects any state modification that would violate a constraint.
+Rather than storing computed values, FRP derives them. The system defines thirteen derived relations — equations that always hold true as the base data changes.
 
-Standard constraints include candidate keys and foreign keys (e.g., every Offer address must exist in Property). Domain-specific constraints are more interesting: a rule that no bidder may submit an offer on their own property (owners are assumed to reside at the address they're selling), a rule that no offers may be submitted after a sale is agreed, a rule limiting the website to 50 PREMIUM price band properties, and a rule that no single bidder may have more than 10 offers on any one property.
+The internal derived relations exist to support other derivations. `RoomInfo` extends each room with its computed area:
 
-The constraint checking is entirely declarative:
-
+```frp
+RoomInfo = extend(Room, (roomSize = width * breadth))
 ```
+
+`PropertyInfo` extends each property with its price band, area code, room count, and total square footage:
+
+```frp
+PropertyInfo = extend(Property,
+  (priceBand    = priceBandForPrice(price)),
+  (areaCode     = areaCodeForAddress(address)),
+  (numberOfRooms = count(restrict(RoomInfo | address == address))),
+  (squareFeet   = sum(roomSize, restrict(RoomInfo | address == address))))
+```
+
+External derived relations are what users care about. `OpenOffers` shows current bids with no decision yet. `PropertyForWebSite` shows unsold properties for the website. `CommissionDue` shows each agent's total commission:
+
+```frp
+CommissionDue = project(
+  summarize(SalesCommissions, project(SalesCommissions, agent),
+    totalCommission = sum(commission)),
+  agent, totalCommission)
+```
+
+Because these are derived rather than stored, the infrastructure maintains them automatically. There is no cache to invalidate, no trigger to debug, no materialized view to keep in sync.
+
+Illustrates: [[data-independence]], [[relational-model]]
+
+### Seven Integrity Constraints — Rules That Cannot Be Violated
+
+Constraints are boolean expressions that must always evaluate to true. The infrastructure checks them on every state change and rejects anything that would break a rule.
+
+Standard constraints define keys and foreign keys:
+
+```frp
+candidate key Property = (address)
+candidate key Offer = (address, offerDate, bidderName, bidderAddress)
+foreign key Offer (address) in Property
+foreign key Decision (address, offerDate, bidderName, bidderAddress) in Offer
+```
+
+Domain-specific constraints express business rules declaratively. No bidder may offer on their own property:
+
+```frp
 count(restrict(Offer | bidderAddress == address)) == 0
-count(restrict(join(Offer, project(Acceptance, address decisionDate)) | offerDate > decisionDate)) == 0
 ```
 
-Critically, constraints cannot interact with each other — each is evaluated independently. This means constraint complexity grows linearly, not quadratically.
+No offers may be placed after a sale is agreed:
 
-Illustrates: [[integrity-constraints]], [[declarative-specification]]
-
-### Feeders, Observers, and the Outside World
-
-The FRP architecture cleanly separates the relational core from the outside world. Feeders convert user input into relational assignment commands — they observe external events and translate them into state changes. Observers watch derived relvars and generate output when they change.
-
-A key insight: feeders and observers never directly modify derived state. If a feeder observed some output and fed it back as input, it would create derived accidental state masquerading as essential state. The only things that enter the system as essential state are genuinely external inputs (new properties, offers, decisions from agents).
-
-The infrastructure mediates all state changes:
-
-```
-relvar := newRelationValue
+```frp
+count(restrict(join(Offer, project(Acceptance, address, decisionDate))
+  | offerDate > decisionDate)) == 0
 ```
 
-If this assignment would violate an integrity constraint, the infrastructure rejects it outright.
+Max 10 offers per bidder per property:
 
-Illustrates: [[separation-of-concerns]], [[essential-state]]
+```frp
+count(restrict(summarize(Offer,
+  project(Offer, address, bidderName, bidderAddress),
+  numberOfOffers = count())
+  | numberOfOffers > 10)) == 0
+```
 
-### Referential Transparency in User Functions
+Critically, constraints cannot interact. Each is evaluated independently, so constraint complexity grows linearly, not quadratically. This is the declarative advantage: state a rule once, and the infrastructure enforces it everywhere, forever.
 
-The user-defined functions (priceBandForPrice, areaCodeForAddress, datesToSpeedBand) are purely functional — they accept arguments and return values without accessing or modifying any state. This means the same function call with the same arguments always returns the same result, anywhere in the system.
+Illustrates: [[integrity-constraints]]
 
-This referential transparency has direct testing benefits: function behavior can be verified once and trusted everywhere. It also means the functions can be composed freely in derived relation definitions without concern for hidden dependencies or ordering effects.
+### Feeders and Observers — The Boundary
 
-The paper notes this is a deliberate design choice: FRP forbids functions from accessing state, ensuring the functional component of the logic is always safe to reason about in isolation.
+The relational core knows nothing of the outside world. Feeders convert user input into relational assignments. Observers watch derived relations and produce output.
+
+```frp
+Property := Property ∪ {new property tuple}
+```
+
+The infrastructure validates every assignment against all constraints before applying it. If a assignment would violate any constraint — say, accepting an offer on a property that already has a sale — the entire transaction is rejected. The database is never left in an invalid state.
+
+Illustrates: [[accidental-state]]
+
+### Pure Functions — No Hidden State
+
+Three user-defined functions compute derived values: `priceBandForPrice`, `areaCodeForAddress`, `datesToSpeedBand`. Each is purely functional — given the same inputs, they always return the same output, with no access to any state.
+
+```frp
+priceBandForPrice(250000) → PREMIUM
+areaCodeForAddress("123 Main St") → CITY
+datesToSpeedBand(registered, sold) → FAST
+```
+
+Because these functions are pure, they can be composed freely in derived relation definitions without concern for ordering or hidden dependencies. They are independently testable: test once, trust everywhere.
 
 Illustrates: [[referential-transparency]]
 
