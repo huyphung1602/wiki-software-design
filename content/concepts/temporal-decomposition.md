@@ -21,6 +21,9 @@ The HTTP server example illustrates this: one team split request handling into "
 
 The fix: design modules around **knowledge**, not **order**. Think about what information each task requires, and encapsulate related knowledge together.
 
+## Cases
+- [[kwic-index-two-decompositions]] — Decomposition 1 of the KWIC index exemplifies temporal decomposition: modules follow processing steps (Input → Circular Shift → Alphabetize → Output), and every change to shared data formats ripples through every module (from Criteria for Modularization)
+
 ## Related
 - [[information-leakage]] — the direct result of temporal decomposition
 - [[information-hiding]] — the principle it violates

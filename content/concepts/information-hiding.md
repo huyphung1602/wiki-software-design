@@ -1,13 +1,15 @@
 ---
 title: Information Hiding
-aliases: [encapsulation, data hiding, information encapsulation]
+aliases: [encapsulation, data hiding, information encapsulation, information hiding]
 tags: [core-concept, modules, design, encapsulation]
-sources: [a-philosophy-of-software-design]
+sources: [a-philosophy-of-software-design, criteria-for-modularization]
 created: 2026-04-08
-updated: 2026-04-08
+updated: 2026-04-13
 ---
 
 # Information Hiding
+
+## In A Philosophy of Software Design
 
 Information hiding is the primary technique for achieving [[deep-modules]]. First described by David Parnas (1972), the idea is that each module should encapsulate a few pieces of knowledge — design decisions — in its implementation, keeping them out of its interface and invisible to other modules.
 
@@ -26,12 +28,33 @@ The technique has limits: don't hide information that is needed outside the modu
 
 [[generality|General-purpose interfaces]] improve information hiding. A special-purpose interface tied to current use cases leaks details about those uses into the module (e.g., a `backspace()` method in a text class leaks UI knowledge). A general-purpose interface (`delete(Position, Position)`) keeps the module unaware of higher-level concerns, enabling better separation and more hidden information.
 
+## In Criteria for Modularization
+
+Parnas introduced information hiding in his 1972 paper as the correct criterion for decomposing systems into modules. Against the conventional approach (decompose by processing steps, like a flowchart), Parnas proposed instead that one begins with a list of difficult design decisions or decisions likely to change. Each module is then designed to hide such a decision from all others.
+
+The KWIC index case study demonstrates the difference: in a conventional decomposition, five plausible changes (input format, storage strategy, character packing format, index strategy, alphabetization timing) each propagate to every module. In an information-hiding decomposition, the same changes stay isolated within single modules.
+
+Parnas identified **five specific decomposition guidelines**: (1) data structures and their accessing/modifying procedures belong in the same module; (2) calling sequences and the routines they invoke belong together; (3) control block formats must be hidden; (4) character codes and alphabetic orderings should be hidden; (5) processing sequences should be hidden within a single module.
+
+A subtle but important point: even when applying information hiding correctly, interfaces can still reveal too much. Parnas notes that specifying an ordered list of circular shifts (rather than just specifying that all shifts exist and are unique) unnecessarily restricted the implementation class — a design error.
+
+## Synthesis
+
+Both Parnas (1972) and Ousterhout (2018) agree on the core insight: modules should hide design decisions. They differ in emphasis — Parnas focuses on decisions likely to *change* as the primary decomposition driver; Ousterhout extends this to hiding *any* design decision, including algorithmic complexity and internal design. The KWIC example shows Parnas was particularly attentive to what information is *unnecessarily* exposed in interfaces, not just what is hidden. Both agree that private fields alone do not constitute information hiding if accessor patterns reveal the same information.
+
+## Cases
+- [[kwic-index-two-decompositions]] — KWIC index decomposed two ways: by processing steps (bad) vs. design decisions (good); demonstrates how the right criterion contains change propagation (from Criteria for Modularization)
+- [[compiler-interpreter-decomposition]] — information-hiding decomposition of a Markov translator was valid across both compiler and interpreter variants, showing design decisions transcend execution model (from Criteria for Modularization)
+
+- [[information-hiding-vs-designing-for-performance]] — Parnas shows that naive information hiding (procedure calls across module boundaries) can hurt performance; recovering performance requires departing from conventional subroutine model and using code injection
+
 ## Related
 - [[deep-modules]] — what information hiding produces
 - [[information-leakage]] — the anti-pattern, the opposite
-- [[modular-design]] — the framework
+- [[modular-design]] — the framework this technique supports
 - [[complexity]] — what information hiding reduces
-- [[a-philosophy-of-software-design-ch05]] — where this technique is developed
+- [[criteria-for-modularization-ch01]] — Parnas's original 1972 paper
+- [[a-philosophy-of-software-design-ch05]] — where this technique is developed in APSD
 - [[a-philosophy-of-software-design-ch19]] — OOP mechanisms support information hiding when used correctly
 - [[decide-what-matters]] — hiding what does not matter to module users
 - [[obvious-code]] — obvious code reduces information readers need

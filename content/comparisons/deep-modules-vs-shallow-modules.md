@@ -48,6 +48,9 @@ The trap: small modules *feel* clean and focused. But [[classitis]] — the cult
 
 The key question: is this module paying its way? If its interface complexity is not offset by the complexity it hides, it's making the system worse.
 
+## Cases
+- [[kwic-index-two-decompositions]] — Decomposition 2 modules are deeper: each hides a specific design decision (data structure, computation method, alphabetization timing) behind a simple function interface. Decomposition 1 modules are shallower: their interfaces expose data formats and table structures shared across processing-step boundaries (from Criteria for Modularization)
+
 ## Related
 - [[deep-modules]] — full concept page
 - [[shallow-modules]] — full concept page

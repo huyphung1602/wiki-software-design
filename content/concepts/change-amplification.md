@@ -15,6 +15,9 @@ The goal of good design is to reduce the amount of code affected by each design 
 
 Change amplification is annoying but manageable — as long as it's clear *which* code needs to change. This makes it the least dangerous of the three symptoms of complexity (the worst being [[unknown-unknowns]]).
 
+## Cases
+- [[kwic-index-two-decompositions]] — five hypothetical changes tested against both KWIC decompositions; four of five propagate to all modules in the conventional decomposition but stay isolated in the information-hiding decomposition, illustrating how decomposition criterion directly controls change amplification (from Criteria for Modularization)
+
 ## Related
 - [[complexity]] — the problem this symptom signals
 - [[dependencies-and-obscurity]] — the root cause (dependencies scatter design decisions)

@@ -16,6 +16,7 @@ This wiki is a personal knowledge base on software design, built incrementally f
 
 - **A Philosophy of Software Design** (Ousterhout, 2021) — 23 chapters. Focus: [[problem-decomposition]], [[strategic-programming]], [[modular-design]], [[continuous-design]].
 - **Out of the Tar Pit** (Moseley & Marks, 2006) — 12 sections. Focus: [[state-and-complexity|state]], [[control-flow-complexity|control]], [[functional-relational-programming]] architecture.
+- **Criteria for Modularization** (Parnas, 1972) — 1 section. Focus: [[information-hiding]], [[modular-design]] decomposition criteria.
 
 ### Key Themes
 
@@ -67,13 +68,15 @@ This wiki is a personal knowledge base on software design, built incrementally f
 	- [[out-of-the-tar-pit-s10]] — S10: Example of an FRP System
 	- [[out-of-the-tar-pit-s11]] — S11: Related Work
 	- [[out-of-the-tar-pit-s12]] — S12: Conclusions
+- [[criteria-for-modularization]] — Parnas, 1972 (1 section ingested)
+	- [[criteria-for-modularization-ch01]] — Ch 1: Introduction
 
 ## Concepts
 - [[complexity]] — The overarching enemy in software design (2 sources)
 - [[problem-decomposition]] — Dividing complex problems into independent pieces (1 source)
 - [[strategic-programming]] — Investing in design upfront for long-term system health (2 sources)
 - [[tactical-programming]] — Short-term focus on getting features working ASAP (1 source)
-- [[modular-design]] — Encapsulating complexity in independent modules (1 source)
+- [[modular-design]] — Encapsulating complexity in independent modules (2 sources)
 - [[continuous-design]] — Design as an ongoing activity, not a phase (1 source)
 - [[red-flags]] — Heuristics for spotting overcomplicated code (1 source)
 - [[change-amplification]] — Simple change requires many code modifications (1 source)
@@ -87,7 +90,7 @@ This wiki is a personal knowledge base on software design, built incrementally f
 - [[shallow-modules]] — Complex interface relative to functionality — the anti-pattern (1 source)
 - [[classitis]] — Cultural bias toward many small classes, producing shallow modules (1 source)
 - [[abstractions]] — Simplified views that omit unimportant details (1 source)
-- [[information-hiding]] — Encapsulating design decisions within module implementations (1 source)
+- [[information-hiding]] — Encapsulating design decisions within module implementations (2 sources)
 - [[information-leakage]] — Design decisions reflected in multiple modules (1 source)
 - [[temporal-decomposition]] — Structure follows execution order, causing leakage (1 source)
 - [[generality]] — Making modules somewhat general-purpose for simpler interfaces (1 source)
@@ -123,13 +126,16 @@ This wiki is a personal knowledge base on software design, built incrementally f
 
 ## Cases
 - [[estate-agency-frp]] — A hypothetical Estate Agency system built with FRP: base relvars, 13 derived relvars, integrity constraints, feeders/observers (from Out of the Tar Pit)
+- [[kwic-index-two-decompositions]] — KWIC index decomposed two ways: by processing steps vs. by design decisions; demonstrates how the right criterion contains change propagation (from Criteria for Modularization)
+- [[compiler-interpreter-decomposition]] — information-hiding decomposition of a Markov translator was valid across compiler and interpreter variants (from Criteria for Modularization)
 
 ## Comparisons
 - [[strategic-vs-tactical-programming]] — Strategic investment vs. tactical shortcuts in software development (1 source)
 - [[generality-vs-specialization]] — The trade-off between general-purpose and special-purpose design (1 source)
 - [[deep-modules-vs-shallow-modules]] — Principle vs anti-pattern: interface cost vs functionality benefit (1 source)
-- [[information-hiding-vs-information-leakage]] — Encapsulating knowledge vs spreading it across modules (1 source)
-- [[problem-decomposition-vs-temporal-decomposition]] — Organizing by knowledge boundaries vs execution order (1 source)
+- [[information-hiding-vs-information-leakage]] — Encapsulating knowledge vs spreading it across modules (2 sources)
+- [[problem-decomposition-vs-temporal-decomposition]] — Organizing by knowledge boundaries vs execution order (2 sources)
 - [[designing-for-performance-vs-complexity]] — Why simpler code tends to be faster, and when trade-offs are real (1 source)
+- [[information-hiding-vs-designing-for-performance]] — Parnas shows that naive information hiding (procedure calls across module boundaries) can hurt performance (2 sources)
 - [[essential-vs-accidental-complexity]] — Inherent problem complexity vs eliminable implementation complexity (1 source)
 - [[testing-vs-reasoning]] — Black-box validation vs white-box analysis of software correctness (1 source)

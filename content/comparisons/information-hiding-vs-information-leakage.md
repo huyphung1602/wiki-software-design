@@ -2,9 +2,9 @@
 title: Information Hiding vs Information Leakage
 aliases: [information leakage vs information hiding, encapsulation vs leakage, hiding vs leaking]
 tags: [comparison, modules, design, encapsulation]
-sources: [a-philosophy-of-software-design]
+sources: [a-philosophy-of-software-design, criteria-for-modularization]
 created: 2026-04-08
-updated: 2026-04-08
+updated: 2026-04-13
 ---
 
 # Information Hiding vs Information Leakage
@@ -31,6 +31,10 @@ Every design decision in a system must live somewhere. The question is: how many
 | Module independence | High — modules evolve separately | Low — modules are coupled |
 | Detectability | Obvious when done well | Subtle — "back-door" leakage is pernicious |
 
+### Evidence from Criteria for Modularization
+
+Parnas's KWIC case study demonstrates this concretely. In Decomposition 1 (processing-based), change to the storage format propagates to every module because the format is shared knowledge. In Decomposition 2 (information hiding), storage format is hidden in the Line Storage module — the change affects only that module. The same five hypothetical changes — input format, storage strategy, character packing, index method, alphabetization timing — each behave completely differently depending on which decomposition is used. Information hiding isn't just better style; it literally contains the blast radius of change.
+
 Common causes of leakage:
 - **[[temporal-decomposition]]** — splitting read from parse, write from format, when both phases share knowledge of the data structure
 - **[[classitis]]** — too many small classes, each knowing a bit about the same thing
@@ -53,6 +57,9 @@ The remedies when leakage is detected:
 - When [[pull-complexity-downwards|pulling complexity down]] is not possible
 
 The goal is to *minimize* information needed outside each module, not to hide everything. If information is needed, expose it explicitly rather than leaking it implicitly.
+
+## Cases
+- [[kwic-index-two-decompositions]] — the KWIC index case study is the primary evidence: five changes behave completely differently under each decomposition, demonstrating that information hiding literally controls the blast radius of change (from Criteria for Modularization)
 
 ## Related
 - [[information-hiding]] — full concept page

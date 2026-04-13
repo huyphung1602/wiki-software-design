@@ -19,6 +19,10 @@ The key metric is **depth**: [[deep-modules]] (simple interface, complex impleme
 
 Good [[abstractions]] are the result: simplified views that omit unimportant details while preserving everything that matters. Information should be hidden within modules, not leaked across them. Modules should be general-purpose, not narrowly tailored to current needs.
 
+## Cases
+- [[kwic-index-two-decompositions]] — KWIC index demonstrates two decompositions of the same system: Decomposition 1 (processing steps) vs. Decomposition 2 (design decisions). The decomposition criterion determines changeability, independent development potential, and comprehensibility — not the algorithm used (from Criteria for Modularization)
+- [[compiler-interpreter-decomposition]] — information-hiding decomposition of a Markov translator worked across both compiler and interpreter variants, showing design-decision-based modules transcend execution model and enable reuse across related system types (from Criteria for Modularization)
+
 ## Related
 - [[complexity]] — what modular design encapsulates
 - [[deep-modules]] — the ideal form of a module

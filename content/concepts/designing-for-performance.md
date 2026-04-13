@@ -49,6 +49,8 @@ The Tar Pit shows that performance concerns can be architecturally isolated from
 
 Together they form a complete picture: Ousterhout's techniques work within any architecture to keep code clean and fast, while the Tar Pit's architectural separation prevents performance from ever corrupting the core logic. In practice, both insights apply — use clean design to avoid unnecessary inefficiency, and when optimization is needed, isolate it as much as possible from essential logic.
 
+- [[information-hiding-vs-designing-for-performance]] — Parnas shows that information hiding via procedure calls can impose runtime overhead; recovering performance requires departing from conventional subroutine calls
+
 ## Related
 - [[complexity]] — simpler code tends to be faster
 - [[deep-modules]] -- deep modules are naturally efficient

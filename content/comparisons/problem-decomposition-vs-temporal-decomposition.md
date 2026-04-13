@@ -2,9 +2,9 @@
 title: Problem Decomposition vs Temporal Decomposition
 aliases: [temporal decomposition vs problem decomposition, knowledge-based vs time-based decomposition]
 tags: [comparison, design, decomposition, modules]
-sources: [a-philosophy-of-software-design]
+sources: [a-philosophy-of-software-design, criteria-for-modularization]
 created: 2026-04-08
-updated: 2026-04-08
+updated: 2026-04-13
 ---
 
 # Problem Decomposition vs Temporal Decomposition
@@ -14,6 +14,10 @@ The most fundamental design decision: how to divide a system into modules. One a
 ## Problem Decomposition: organize around knowledge
 
 Divide the system into modules where each encapsulates a distinct piece of knowledge — a design decision that could change independently. The criteria come from David Parnas (1972): modules should hide information from each other, and the decomposition should minimize the knowledge any module needs about others. This produces [[deep-modules]] with strong [[information-hiding]]. See [[problem-decomposition]] for the full concept.
+
+### Evidence from Criteria for Modularization
+
+Parnas's KWIC index case study makes this concrete. Decomposition 1 (Input → Circular Shift → Alphabetize → Output) is temporal/processing-based. Decomposition 2 (Line Storage, Circular Shifter, Alphabetizer) is knowledge-based. Five hypothetical changes were tested against both. In Decomposition 1, four of five changes propagate to every module because shared data formats and storage decisions are visible across all processing-step modules. In Decomposition 2, each change stays isolated — the design decision is hidden within the module that owns it. The same running code, the same functional result, completely different maintenance properties. This is the most cited evidence for why problem decomposition (information hiding) should replace temporal decomposition as the default criterion.
 
 ## Temporal Decomposition: organize around execution order
 
@@ -49,6 +53,9 @@ The file format example: temporal decomposition creates a reader, a modifier, an
 - When used as a *guide*, not a *rule* — execution order can suggest where to look for knowledge boundaries, but the final decomposition should follow knowledge.
 
 The key test: if changing a design decision requires modifying multiple modules, the decomposition is wrong. Reorganize around knowledge.
+
+## Cases
+- [[kwic-index-two-decompositions]] — KWIC index's two decompositions are the primary example; Decomposition 1 is temporal (processing steps), Decomposition 2 is knowledge-based (design decisions), with five-change test showing how the decomposition criterion controls change propagation (from Criteria for Modularization)
 
 ## Related
 - [[problem-decomposition]] — full concept page

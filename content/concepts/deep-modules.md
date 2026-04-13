@@ -26,6 +26,9 @@ The primary technique for achieving depth is [[information-hiding]]: encapsulate
 
 [[generality|General-purpose interfaces]] are another path to depth. A somewhat general-purpose interface — one that covers current needs without being tied to them — results in fewer methods, each more broadly useful, with less code overall. The text editor example: three special-purpose methods (`backspace`, `delete`, `deleteSelection`) replaced by two general ones (`insert`, `delete`) that handle more cases with less code.
 
+## Cases
+- [[kwic-index-two-decompositions]] — Decomposition 2 modules (Line Storage, Circular Shifter, Alphabetizer) are deeper than Decomposition 1 modules; each hides a specific design decision behind a simple function interface, whereas Decomposition 1 modules expose data formats and table structures visible across module boundaries (from Criteria for Modularization)
+
 ## Related
 - [[modular-design]] — the broader framework depth belongs to
 - [[shallow-modules]] — the anti-pattern, the opposite of depth

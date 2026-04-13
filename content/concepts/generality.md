@@ -19,6 +19,9 @@ Generality produces [[deep-modules]] because general-purpose interfaces hide mor
 
 See [[generality-vs-specialization]] for the full comparison.
 
+## Cases
+- [[compiler-interpreter-decomposition]] — information-hiding decomposition of a Markov translator worked across both compiler and interpreter variants; the same modules (hiding decisions about register allocation, search algorithm, rule interpretation) were valid across related but different execution models, showing that decomposition around design decisions produces generality across problem variants (from Criteria for Modularization)
+
 ## Related
 - [[specialization]] — the opposite tendency
 - [[generality-vs-specialization]] — comparison of both approaches
