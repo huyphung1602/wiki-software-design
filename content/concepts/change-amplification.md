@@ -17,6 +17,7 @@ Change amplification is annoying but manageable — as long as it's clear *which
 
 ## Cases
 - [[kwic-index-two-decompositions]] — five hypothetical changes tested against both KWIC decompositions; four of five propagate to all modules in the conventional decomposition but stay isolated in the information-hiding decomposition, illustrating how decomposition criterion directly controls change amplification (from Criteria for Modularization)
+- [[compiler-team-theory]] — group B's modifications without the theory created patches that destroyed the compiler's structure; each subsequent modification accumulated more decay; the theory-holding team's absence caused change amplification at the structural level (from Programming as Theory Building)
 
 ## Related
 - [[complexity]] — the problem this symptom signals

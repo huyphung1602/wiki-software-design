@@ -17,6 +17,7 @@ This wiki is a personal knowledge base on software design, built incrementally f
 - **A Philosophy of Software Design** (Ousterhout, 2021) — 23 chapters. Focus: [[problem-decomposition]], [[strategic-programming]], [[modular-design]], [[continuous-design]].
 - **Out of the Tar Pit** (Moseley & Marks, 2006) — 12 sections. Focus: [[state-and-complexity|state]], [[control-flow-complexity|control]], [[functional-relational-programming]] architecture.
 - **Criteria for Modularization** (Parnas, 1972) — 1 section. Focus: [[information-hiding]], [[modular-design]] decomposition criteria.
+- **Programming as Theory Building** (Naur, 1985) — 2 sections. Focus: [[theory-building]], [[tacit-knowledge]], [[program-life-death-revival]].
 
 ### Key Themes
 
@@ -70,10 +71,14 @@ This wiki is a personal knowledge base on software design, built incrementally f
 	- [[out-of-the-tar-pit-s12]] — S12: Conclusions
 - [[criteria-for-modularization]] — Parnas, 1972 (1 section ingested)
 	- [[criteria-for-modularization-ch01]] — Ch 1: Introduction
+- [[naur]] — Naur, 1985 (2 sections ingested)
+	- [[naur-ch01]] — Ch 1: Theory Building View
+	- [[naur-ch02]] — Ch 2: Implications
 
 ## Concepts
 - [[complexity]] — The overarching enemy in software design (2 sources)
 - [[problem-decomposition]] — Dividing complex problems into independent pieces (1 source)
+- [[program-life-death-revival]] — Programs live while teams hold their theory, die when teams disperse, and cannot be revived from docs alone (1 source)
 - [[strategic-programming]] — Investing in design upfront for long-term system health (2 sources)
 - [[tactical-programming]] — Short-term focus on getting features working ASAP (1 source)
 - [[modular-design]] — Encapsulating complexity in independent modules (2 sources)
@@ -84,6 +89,7 @@ This wiki is a personal knowledge base on software design, built incrementally f
 - [[unknown-unknowns]] — Not obvious what to modify or what info is needed (1 source)
 - [[dependencies-and-obscurity]] — The two root causes of complexity (1 source)
 - [[tactical-tornado]] — The extreme tactical programmer archetype (1 source)
+- [[tacit-knowledge]] — Knowledge that cannot be expressed in documentation or rules, held by programmers who understand the system (1 source)
 - [[design-investment]] — Spending 10-20% of dev time on design (1 source)
 - [[technical-debt]] — Borrowing time from the future, rarely repaid (1 source)
 - [[deep-modules]] — Simple interface, powerful functionality — the ideal module (1 source)
@@ -92,7 +98,7 @@ This wiki is a personal knowledge base on software design, built incrementally f
 - [[abstractions]] — Simplified views that omit unimportant details (1 source)
 - [[information-hiding]] — Encapsulating design decisions within module implementations (2 sources)
 - [[information-leakage]] — Design decisions reflected in multiple modules (1 source)
-- [[temporal-decomposition]] — Structure follows execution order, causing leakage (1 source)
+- [[theory-building]] — Programming as theory building: the primary result of programming is the theory, not the code (1 source)
 - [[generality]] — Making modules somewhat general-purpose for simpler interfaces (1 source)
 - [[specialization]] — Keeping specialized code separate from general-purpose code (1 source)
 - [[pass-through-methods]] — Methods that just delegate with same signature (1 source)
@@ -101,7 +107,7 @@ This wiki is a personal knowledge base on software design, built incrementally f
 - [[together-or-apart]] — When to combine or separate functionality (1 source)
 - [[exception-handling]] — Reducing complexity from exceptions: define away, mask, aggregate, crash (1 source)
 - [[design-it-twice]] — Consider multiple approaches for every major design decision (1 source)
-- [[comments-and-documentation]] — Comments as essential for abstraction and managing complexity (1 source)
+- [[comments-and-documentation]] — Comments as essential for abstraction and managing complexity (2 sources)
 - [[choosing-names]] — Names should be precise and consistent (1 source)
 - [[comments-first-approach]] — Write comments first as a design tool (1 source)
 - [[consistency]] — Similar things done in similar ways to reduce complexity (1 source)
@@ -128,6 +134,8 @@ This wiki is a personal knowledge base on software design, built incrementally f
 - [[estate-agency-frp]] — A hypothetical Estate Agency system built with FRP: base relvars, 13 derived relvars, integrity constraints, feeders/observers (from Out of the Tar Pit)
 - [[kwic-index-two-decompositions]] — KWIC index decomposed two ways: by processing steps vs. by design decisions; demonstrates how the right criterion contains change propagation (from Criteria for Modularization)
 - [[compiler-interpreter-decomposition]] — information-hiding decomposition of a Markov translator was valid across compiler and interpreter variants (from Criteria for Modularization)
+- [[compiler-team-theory]] — compiler team with full documentation and personal advice still could not independently generate design judgments; demonstrates theory cannot be transferred by artifacts (from Programming as Theory Building)
+- [[industrial-monitoring-system]] — 200K LOC industrial monitoring system: continuous personal involvement was the only carrier of essential knowledge; formal documentation insufficient (from Programming as Theory Building)
 
 ## Comparisons
 - [[strategic-vs-tactical-programming]] — Strategic investment vs. tactical shortcuts in software development (1 source)
