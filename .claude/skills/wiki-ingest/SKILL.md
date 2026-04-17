@@ -77,9 +77,15 @@ Based on the discussion:
 - **No subsections with ## headers** — chapter summaries are single-section prose
 - The summary should capture ALL key points from the chapter, but in concise prose form
 
-**Book overview page** (`content/books/<book-name>.md`):
+**Book overview page** (`content/books/<book-name>/<book-name>.md`):
 - Create on first chunk, update on subsequent chunks
 - High-level summary, list of chapters with links, key themes
+
+**Book index** (`content/books/<book-name>/index.md`):
+- List of all chapters/sections in the book
+- Overview link at top, then chapter links
+- Create on first chunk, update as new chapters are added
+- Set `aliases: [<book-name>]` in frontmatter so folder path shows the book name, not "index"
 
 **Concept pages** (`content/concepts/<concept>.md`):
 

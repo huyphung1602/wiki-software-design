@@ -38,7 +38,8 @@ Triggered by: `/wiki-ingest <book-name> [chunk-number]`
 3. Present key takeaways to the user, discuss what to emphasize
 4. Write/update content pages:
    - `content/books/<book-name>/<book-name>-<chapter>.md` — chapter summary (write when last chunk for chapter is reached)
-   - `content/books/<book-name>.md` — update book overview
+   - `content/books/<book-name>/<book-name>.md` — update book overview
+   - `content/books/<book-name>/index.md` — update book index
    - `content/concepts/<concept>.md` — create or update for each concept mentioned
    - `content/comparisons/` — note contradictions or reinforcements with existing ideas
 5. Update `content/index.md` — add new pages, update summaries
