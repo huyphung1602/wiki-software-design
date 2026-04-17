@@ -49,7 +49,7 @@ If the chunk text contains `[Image: page-NNN-img-MM.ext]` placeholders:
 **Image directory structure:**
 - Source: `raw/<book-name>/images/page-NNN-fig-XX.png`
 - Destination: `content/images/<book-name>/page-NNN-fig-XX.png`
-- Reference: `../images/<book-name>/page-NNN-fig-XX.png` (relative from content/books/)
+- Reference: `../../images/<book-name>/page-NNN-fig-XX.png` (relative from `content/books/<book-name>/`)
 
 The user will see image descriptions during the interactive discussion (step 3) and can correct or refine them.
 
@@ -66,7 +66,7 @@ Wait for user input before proceeding.
 
 Based on the discussion:
 
-**Chapter summary page** (`content/books/<book-name>-chNN.md`):
+**Chapter summary page** (`content/books/<book-name>/<book-name>-chNN.md`):
 - Write when the last chunk for a chapter is reached (check map.md)
 - For multi-chunk chapters: accumulate understanding, write only when complete
 - Include YAML frontmatter, ~300 words, `[[wiki links]]` for concepts
