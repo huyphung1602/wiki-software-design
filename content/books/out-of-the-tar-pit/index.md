@@ -1,6 +1,6 @@
 ---
 title: Out of the Tar Pit
-aliases: [out-of-the-tar-pit]
+aliases: [out-of-the-tar-pit-index]
 ---
 
 # Out of the Tar Pit

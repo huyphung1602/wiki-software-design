@@ -1,6 +1,6 @@
 ---
 title: Criteria for Modularization
-aliases: [criteria-for-modularization]
+aliases: [criteria-for-modularization-index]
 ---
 
 # Criteria for Modularization

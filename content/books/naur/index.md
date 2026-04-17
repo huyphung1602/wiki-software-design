@@ -1,6 +1,6 @@
 ---
 title: Programming as Theory Building
-aliases: [naur]
+aliases: [naur-index]
 ---
 
 # Programming as Theory Building

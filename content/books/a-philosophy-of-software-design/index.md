@@ -1,6 +1,6 @@
 ---
 title: A Philosophy of Software Design
-aliases: [a-philosophy-of-software-design]
+aliases: [a-philosophy-of-software-design-index]
 ---
 
 # A Philosophy of Software Design
