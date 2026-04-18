@@ -1,12 +1,12 @@
 ---
-title: "Ch 10: Define Errors Out Of Existence"
+title: "Chapter 10 - Define Errors Out Of Existence"
 tags: [chapter, software-design, errors, exceptions]
 sources: [a-philosophy-of-software-design]
 created: 2026-04-08
 updated: 2026-04-08
 ---
 
-# Ch 10: Define Errors Out Of Existence
+# Chapter 10 - Define Errors Out Of Existence
 
 Part of [[a-philosophy-of-software-design]]
 

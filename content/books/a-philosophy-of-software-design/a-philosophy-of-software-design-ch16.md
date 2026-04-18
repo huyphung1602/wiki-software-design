@@ -1,12 +1,12 @@
 ---
-title: "Ch 16: Modifying Existing Code"
+title: "Chapter 16 - Modifying Existing Code"
 tags: [software-design, refactoring, documentation]
 sources: [a-philosophy-of-software-design]
 created: 2026-04-08
 updated: 2026-04-08
 ---
 
-# Ch 16: Modifying Existing Code
+# Chapter 16 - Modifying Existing Code
 
 Part of [[a-philosophy-of-software-design]]
 

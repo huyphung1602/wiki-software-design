@@ -1,12 +1,12 @@
 ---
-title: "Ch 17: Consistency"
+title: "Chapter 17 - Consistency"
 tags: [software-design, consistency, coding-style]
 sources: [a-philosophy-of-software-design]
 created: 2026-04-08
 updated: 2026-04-08
 ---
 
-# Ch 17: Consistency
+# Chapter 17 - Consistency
 
 Part of [[a-philosophy-of-software-design]]
 

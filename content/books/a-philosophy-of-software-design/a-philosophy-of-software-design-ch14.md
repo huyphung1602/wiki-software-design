@@ -1,12 +1,12 @@
 ---
-title: "Ch 14: Choosing Names"
+title: "Chapter 14 - Choosing Names"
 tags: [chapter, software-design, naming]
 sources: [a-philosophy-of-software-design]
 created: 2026-04-08
 updated: 2026-04-08
 ---
 
-# Ch 14: Choosing Names
+# Chapter 14 - Choosing Names
 
 Part of [[a-philosophy-of-software-design]]
 

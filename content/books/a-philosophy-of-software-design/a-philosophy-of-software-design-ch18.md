@@ -1,12 +1,12 @@
 ---
-title: "Ch 18: Code Should be Obvious"
+title: "Chapter 18 - Code Should be Obvious"
 tags: [software-design, readability, code-quality]
 sources: [a-philosophy-of-software-design]
 created: 2026-04-08
 updated: 2026-04-08
 ---
 
-# Ch 18: Code Should be Obvious
+# Chapter 18 - Code Should be Obvious
 
 Part of [[a-philosophy-of-software-design]]
 

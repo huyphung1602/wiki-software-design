@@ -1,12 +1,12 @@
 ---
-title: "Out of the Tar Pit — S7: Recommended General Approach"
+title: "S7: Recommended General Approach"
 tags: [complexity, separation, state, control-flow, accidental-complexity]
 sources: [out-of-the-tar-pit]
 created: 2026-04-08
 updated: 2026-04-09
 ---
 
-# Out of the Tar Pit — S7: Recommended General Approach
+# S7: Recommended General Approach
 
 This is the theoretical core of the paper. The authors' two recommendations are: **avoid** complexity where possible, and **separate** it where not.
 

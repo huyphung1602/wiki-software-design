@@ -1,12 +1,12 @@
 ---
-title: "A Philosophy of Software Design — Ch 3: Working Code Isn't Enough"
+title: "Chapter 3 - Working Code Isn't Enough"
 tags: [chapter, mindset, investment]
 sources: [a-philosophy-of-software-design]
 created: 2026-04-08
 updated: 2026-04-08
 ---
 
-# A Philosophy of Software Design — Ch 3: Working Code Isn't Enough
+# Chapter 3 - Working Code Isn't Enough
 
 Part of [[a-philosophy-of-software-design]]
 

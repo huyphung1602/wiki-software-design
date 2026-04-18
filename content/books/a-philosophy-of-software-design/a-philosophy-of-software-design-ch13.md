@@ -1,12 +1,12 @@
 ---
-title: "Ch 13: Comments Should Describe Things that Aren't Obvious from the Code"
+title: "Chapter 13 - Comments Should Describe Things that Aren't Obvious from the Code"
 tags: [chapter, software-design, documentation]
 sources: [a-philosophy-of-software-design]
 created: 2026-04-08
 updated: 2026-04-08
 ---
 
-# Ch 13: Comments Should Describe Things that Aren't Obvious from the Code
+# Chapter 13 - Comments Should Describe Things that Aren't Obvious from the Code
 
 Part of [[a-philosophy-of-software-design]]
 

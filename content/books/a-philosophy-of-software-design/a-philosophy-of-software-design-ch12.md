@@ -1,12 +1,12 @@
 ---
-title: "Ch 12: Why Write Comments? The Four Excuses"
+title: "Chapter 12 - Why Write Comments? The Four Excuses"
 tags: [chapter, software-design, documentation]
 sources: [a-philosophy-of-software-design]
 created: 2026-04-08
 updated: 2026-04-08
 ---
 
-# Ch 12: Why Write Comments? The Four Excuses
+# Chapter 12 - Why Write Comments? The Four Excuses
 
 Part of [[a-philosophy-of-software-design]]
 

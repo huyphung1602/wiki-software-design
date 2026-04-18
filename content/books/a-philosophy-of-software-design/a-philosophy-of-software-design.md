@@ -1,12 +1,15 @@
 ---
-title: "A Philosophy of Software Design"
-tags: [book, software-design]
-sources: [a-philosophy-of-software-design]
+title: A Philosophy of Software Design
+tags:
+  - book
+  - software-design
+sources:
+  - a-philosophy-of-software-design
 created: 2026-04-08
 updated: 2026-04-08
 ---
 
-# A Philosophy of Software Design
+# Overview
 
 By John Ousterhout, Stanford University. 2nd Edition, 2021 (Yaknyam Press). 210 pages.
 

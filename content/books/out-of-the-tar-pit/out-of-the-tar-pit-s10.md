@@ -1,12 +1,12 @@
 ---
-title: "Out of the Tar Pit — S10: Example of an FRP System"
+title: "S10: Example of an FRP System"
 tags: [frp, relational-model, example]
 sources: [out-of-the-tar-pit]
 created: 2026-04-08
 updated: 2026-04-08
 ---
 
-# Out of the Tar Pit — S10: Example of an FRP System
+# S10: Example of an FRP System
 
 This section demonstrates [[functional-relational-programming]] through an estate agency system. The example tracks properties, offers, owner decisions, and agent commissions, illustrating all four FRP components.
 

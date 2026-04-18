@@ -1,12 +1,12 @@
 ---
-title: "Out of the Tar Pit — S2: Complexity"
+title: "S2: Complexity"
 tags: [complexity, simplicity]
 sources: [out-of-the-tar-pit]
 created: 2026-04-08
 updated: 2026-04-08
 ---
 
-# Out of the Tar Pit — S2: Complexity
+# S2: Complexity
 
 Of the four properties Brooks identified as making software hard -- Complexity, Conformity, Changeability, and Invisibility -- Moseley and Marks argue that only [[complexity]] is truly significant. The others are either forms of complexity or problematic solely because complexity already exists in the system. Complexity is the root cause of most software problems: unreliability, late delivery, lack of security, and poor performance in large-scale systems all trace back to unmanageable complexity.
 

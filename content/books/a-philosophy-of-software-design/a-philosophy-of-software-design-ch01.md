@@ -1,12 +1,12 @@
 ---
-title: "A Philosophy of Software Design — Ch 1: Introduction"
+title: "Chapter 1 - Introduction"
 tags: [chapter, introduction]
 sources: [a-philosophy-of-software-design]
 created: 2026-04-08
 updated: 2026-04-08
 ---
 
-# A Philosophy of Software Design — Ch 1: Introduction
+# Chapter 1 - Introduction
 
 Part of [[a-philosophy-of-software-design]]
 

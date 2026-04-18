@@ -1,12 +1,12 @@
 ---
-title: "Ch 11: Design it Twice"
+title: "Chapter 11 - Design it Twice"
 tags: [chapter, software-design, process]
 sources: [a-philosophy-of-software-design]
 created: 2026-04-08
 updated: 2026-04-08
 ---
 
-# Ch 11: Design it Twice
+# Chapter 11 - Design it Twice
 
 Part of [[a-philosophy-of-software-design]]
 

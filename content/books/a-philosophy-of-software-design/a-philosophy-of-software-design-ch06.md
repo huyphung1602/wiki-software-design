@@ -1,12 +1,12 @@
 ---
-title: "Ch 6: General-Purpose Modules are Deeper"
+title: "Chapter 6 - General-Purpose Modules are Deeper"
 tags: [chapter, software-design, modules]
 sources: [a-philosophy-of-software-design]
 created: 2026-04-08
 updated: 2026-04-08
 ---
 
-# Ch 6: General-Purpose Modules are Deeper
+# Chapter 6 - General-Purpose Modules are Deeper
 
 Part of [[a-philosophy-of-software-design]]
 

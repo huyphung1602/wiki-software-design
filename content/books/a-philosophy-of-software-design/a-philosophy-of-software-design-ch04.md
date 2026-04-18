@@ -1,12 +1,12 @@
 ---
-title: "Ch 4: Modules Should Be Deep"
+title: "Chapter 4 - Modules Should Be Deep"
 tags: [chapter, software-design, modules]
 sources: [a-philosophy-of-software-design]
 created: 2026-04-08
 updated: 2026-04-08
 ---
 
-# Ch 4: Modules Should Be Deep
+# Chapter 4 - Modules Should Be Deep
 
 Part of [[a-philosophy-of-software-design]]
 

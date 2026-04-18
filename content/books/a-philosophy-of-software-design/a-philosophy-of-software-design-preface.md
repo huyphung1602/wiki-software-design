@@ -1,12 +1,15 @@
 ---
-title: "A Philosophy of Software Design — Preface"
-tags: [preface, context]
-sources: [a-philosophy-of-software-design]
+title: Chapter 0 - Preface
+tags:
+  - preface
+  - context
+sources:
+  - a-philosophy-of-software-design
 created: 2026-04-08
 updated: 2026-04-08
 ---
 
-# A Philosophy of Software Design — Preface
+# Chapter 0 - Preface
 
 Part of [[a-philosophy-of-software-design]]
 

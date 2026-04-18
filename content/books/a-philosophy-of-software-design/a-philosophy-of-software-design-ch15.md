@@ -1,12 +1,12 @@
 ---
-title: "Ch 15: Write The Comments First"
+title: "Chapter 15 - Write The Comments First"
 tags: [chapter, software-design, documentation, process]
 sources: [a-philosophy-of-software-design]
 created: 2026-04-08
 updated: 2026-04-08
 ---
 
-# Ch 15: Write The Comments First
+# Chapter 15 - Write The Comments First
 
 Part of [[a-philosophy-of-software-design]]
 

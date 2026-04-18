@@ -69,6 +69,17 @@ Based on the discussion:
 **Chapter summary page** (`content/books/<book-name>/<book-name>-chNN.md`):
 - Write when the last chunk for a chapter is reached (check map.md)
 - For multi-chunk chapters: accumulate understanding, write only when complete
+- **Use short titles** — the file name already contains book-name for uniqueness; title should be chapter name only (e.g., "Chapter 1 - Introduction")
+- YAML frontmatter: `title: "Chapter N - Title"` or `title: "Title"` if chapter name is unique enough
+- **Preface chapters** (if any): use `title: "Chapter 0 - Preface"`
+- H1 should match title exactly (no book name prefix needed — already in file path context)
+- Frontmatter tags use YAML list format:
+  ```yaml
+  tags:
+    - chapter
+    - topic1
+    - topic2
+  ```
 - Include YAML frontmatter, ~300 words, `[[wiki links]]` for concepts
 - Link back to book overview: `Part of [[<book-name>]]`
 - **Structure**: H1 title → 2-4 paragraphs flowing prose → `Part of [[...]]` → `## Related`
@@ -79,7 +90,11 @@ Based on the discussion:
 
 **Book overview page** (`content/books/<book-name>/<book-name>.md`):
 - Create on first chunk, update on subsequent chunks
+- **H1 should be `# Overview`** (not the book title)
+- Frontmatter `title` field is just the book name (e.g., `title: A Philosophy of Software Design`)
+- Include structured metadata: author, year, venue/publisher, page count
 - High-level summary, list of chapters with links, key themes
+- Frontmatter tags use YAML list format
 
 **Book index** (`content/books/<book-name>/index.md`):
 - List of all chapters/sections in the book

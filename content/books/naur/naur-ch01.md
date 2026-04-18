@@ -1,12 +1,17 @@
 ---
-title: "Naur: Theory Building View"
-sources: [naur]
-tags: [book, theory-building, tacit-knowledge, programming]
+title: 1 - Theory Building View
+sources:
+  - naur
+tags:
+  - book
+  - theory-building
+  - tacit-knowledge
+  - programming
 created: 2026-04-15
 updated: 2026-04-15
 ---
 
-# Naur: Theory Building View
+# Theory Building View
 
 Naur opens with a provocation: the dominant view of programming as text production is misleading. Programming properly should be regarded as an activity by which programmers form a theory of how the matters at hand are to be handled by a computer program. The program text is a secondary product; the primary result is the knowledge held by programmers.
 

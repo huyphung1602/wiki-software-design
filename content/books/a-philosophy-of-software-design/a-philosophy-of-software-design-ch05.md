@@ -1,12 +1,12 @@
 ---
-title: "Ch 5: Information Hiding (and Leakage)"
+title: "Chapter 5 - Information Hiding (and Leakage)"
 tags: [chapter, software-design, modules]
 sources: [a-philosophy-of-software-design]
 created: 2026-04-08
 updated: 2026-04-08
 ---
 
-# Ch 5: Information Hiding (and Leakage)
+# Chapter 5 - Information Hiding (and Leakage)
 
 Part of [[a-philosophy-of-software-design]]
 

@@ -1,12 +1,12 @@
 ---
-title: "Out of the Tar Pit — S11: Related Work"
+title: "S11: Related Work"
 tags: [frp, related-work]
 sources: [out-of-the-tar-pit]
 created: 2026-04-08
 updated: 2026-04-08
 ---
 
-# Out of the Tar Pit — S11: Related Work
+# S11: Related Work
 
 The authors briefly situate [[functional-relational-programming]] relative to prior work. FRP draws some influence from Darwen and Date's "Foundation for Future Database Systems: The Third Manifesto," but differs in aiming at general-purpose large-scale application programming rather than database-specific concerns. FRP also uses a separate functional sub-language and has different ideas about types, while its accidental component covers a broader range than traditional DBMS physical/logical mapping.
 

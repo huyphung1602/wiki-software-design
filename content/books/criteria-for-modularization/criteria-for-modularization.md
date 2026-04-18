@@ -1,11 +1,12 @@
 ---
-title: Criteria for Modularization
-sources: [criteria-for-modularization]
+title: 0 - Overview
+sources:
+  - criteria-for-modularization
 created: 2026-04-13
 updated: 2026-04-13
 ---
 
-# Criteria for Modularization
+# Overview
 
 On the Criteria To Be Used in Decomposing Systems into Modules (1972) by D.L. Parnas is one of the foundational papers in software engineering. It transformed how practitioners think about [[modular-design]] by demonstrating that *how* you decompose a system matters far more than the act of decomposing it itself.
 

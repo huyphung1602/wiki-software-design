@@ -1,12 +1,17 @@
 ---
-title: "Naur: Implications"
-sources: [naur]
-tags: [book, theory-building, method, programmer-status]
+title: 2- Implications
+sources:
+  - naur
+tags:
+  - book
+  - theory-building
+  - method
+  - programmer-status
 created: 2026-04-15
 updated: 2026-04-15
 ---
 
-# Naur: Implications
+# Implications
 
 Naur draws out three major consequences of the Theory Building View: its relationship to programming method, the proper status of programmers, and the educational implications.
 

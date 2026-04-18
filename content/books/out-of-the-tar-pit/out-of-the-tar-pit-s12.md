@@ -1,12 +1,12 @@
 ---
-title: "Out of the Tar Pit — S12: Conclusions"
+title: "S12: Conclusions"
 tags: [complexity, simplicity, separation, state, frp]
 sources: [out-of-the-tar-pit]
 created: 2026-04-08
 updated: 2026-04-08
 ---
 
-# Out of the Tar Pit — S12: Conclusions
+# S12: Conclusions
 
 The authors restate their central thesis: [[complexity]] causes more problems in large software systems than anything else, and it can be tamed -- but only through concerted effort to avoid it where possible and separate it where not. A system should be separated into three main parts: essential state, essential logic, and accidental state and control.
 

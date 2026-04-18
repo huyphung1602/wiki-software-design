@@ -1,12 +1,12 @@
 ---
-title: "Ch 9: Better Together Or Better Apart?"
+title: "Chapter 9 - Better Together Or Better Apart?"
 tags: [chapter, software-design, modules, decomposition]
 sources: [a-philosophy-of-software-design]
 created: 2026-04-08
 updated: 2026-04-08
 ---
 
-# Ch 9: Better Together Or Better Apart?
+# Chapter 9 - Better Together Or Better Apart?
 
 Part of [[a-philosophy-of-software-design]]
 

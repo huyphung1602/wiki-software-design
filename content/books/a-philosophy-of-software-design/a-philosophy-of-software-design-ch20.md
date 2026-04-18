@@ -1,12 +1,12 @@
 ---
-title: "Ch 20: Designing for Performance"
+title: "Chapter 20 - Designing for Performance"
 tags: [software-design, performance, optimization]
 sources: [a-philosophy-of-software-design]
 created: 2026-04-08
 updated: 2026-04-08
 ---
 
-# Ch 20: Designing for Performance
+# Chapter 20 - Designing for Performance
 
 Part of [[a-philosophy-of-software-design]]
 

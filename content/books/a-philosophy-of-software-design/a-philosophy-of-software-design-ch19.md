@@ -1,12 +1,12 @@
 ---
-title: "Ch 19: Software Trends"
+title: "Chapter 19 - Software Trends"
 tags: [software-design, trends, patterns, testing]
 sources: [a-philosophy-of-software-design]
 created: 2026-04-08
 updated: 2026-04-08
 ---
 
-# Ch 19: Software Trends
+# Chapter 19 - Software Trends
 
 Part of [[a-philosophy-of-software-design]]
 

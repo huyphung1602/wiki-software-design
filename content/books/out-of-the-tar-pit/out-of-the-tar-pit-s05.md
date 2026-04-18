@@ -1,12 +1,12 @@
 ---
-title: "Out of the Tar Pit — S5: Classical Approaches to Managing Complexity"
+title: "S5: Classical Approaches to Managing Complexity"
 tags: [oop, functional-programming, logic-programming, state, control-flow]
 sources: [out-of-the-tar-pit]
 created: 2026-04-08
 updated: 2026-04-08
 ---
 
-# Out of the Tar Pit — S5: Classical Approaches to Managing Complexity
+# S5: Classical Approaches to Managing Complexity
 
 This section evaluates the three major programming paradigms through the lens of state and control.
 

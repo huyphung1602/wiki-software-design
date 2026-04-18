@@ -1,12 +1,12 @@
 ---
-title: "Ch 8: Pull Complexity Downwards"
+title: "Chapter 8 - Pull Complexity Downwards"
 tags: [chapter, software-design, modules]
 sources: [a-philosophy-of-software-design]
 created: 2026-04-08
 updated: 2026-04-08
 ---
 
-# Ch 8: Pull Complexity Downwards
+# Chapter 8 - Pull Complexity Downwards
 
 Part of [[a-philosophy-of-software-design]]
 

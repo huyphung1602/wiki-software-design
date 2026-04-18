@@ -1,12 +1,18 @@
 ---
-title: "Out of the Tar Pit"
-tags: [complexity, state, functional-programming, relational-model, frp]
-sources: [out-of-the-tar-pit]
+title: Out of the Tar Pit
+tags:
+  - complexity
+  - state
+  - functional-programming
+  - relational-model
+  - frp
+sources:
+  - out-of-the-tar-pit
 created: 2026-04-08
 updated: 2026-04-08
 ---
 
-# Out of the Tar Pit
+# Overview
 
 **Authors:** Ben Moseley and Peter Marks
 **Year:** 2006

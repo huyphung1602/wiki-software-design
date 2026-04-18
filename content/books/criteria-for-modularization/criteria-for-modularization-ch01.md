@@ -1,12 +1,16 @@
 ---
-title: "Criteria for Modularization: Introduction"
-sources: [criteria-for-modularization]
-tags: [book, modular-design, information-hiding]
+title: 1 - Criteria for Modularization
+sources:
+  - criteria-for-modularization
+tags:
+  - book
+  - modular-design
+  - information-hiding
 created: 2026-04-13
 updated: 2026-04-13
 ---
 
-# Criteria for Modularization: Introduction
+# Criteria for Modularization
 
 D.L. Parnas's 1972 paper presents a deceptively simple idea that reshaped software engineering: the criteria used to decompose a system into modules matters more than the act of modularizing itself. Most programmers instinctively divide systems by processing steps — input, then processing, then output — because that is how flowcharts work. Parnas argues this is almost always wrong.
 

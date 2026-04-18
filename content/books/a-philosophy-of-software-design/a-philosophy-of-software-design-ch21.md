@@ -1,12 +1,12 @@
 ---
-title: "Ch 21: Decide What Matters"
+title: "Chapter 21 - Decide What Matters"
 tags: [software-design, priorities, design-philosophy]
 sources: [a-philosophy-of-software-design]
 created: 2026-04-08
 updated: 2026-04-08
 ---
 
-# Ch 21: Decide What Matters
+# Chapter 21 - Decide What Matters
 
 Part of [[a-philosophy-of-software-design]]
 

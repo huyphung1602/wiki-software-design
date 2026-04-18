@@ -1,12 +1,12 @@
 ---
-title: "Out of the Tar Pit — S6: Accidents and Essence"
+title: "S6: Accidents and Essence"
 tags: [complexity, essential-complexity, accidental-complexity]
 sources: [out-of-the-tar-pit]
 created: 2026-04-08
 updated: 2026-04-08
 ---
 
-# Out of the Tar Pit — S6: Accidents and Essence
+# S6: Accidents and Essence
 
 Building on Brooks' distinction, the authors define [[essential-vs-accidental-complexity]] with a stricter definition of "essential." Essential complexity is inherent in the problem as seen by the users; accidental complexity is everything else -- arising from performance issues, suboptimal languages, and infrastructure. Crucially, bits, bytes, transistors, and even computers themselves are not essential, because they have nothing to do with the users' problem.
 

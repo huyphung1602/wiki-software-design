@@ -1,12 +1,12 @@
 ---
-title: "Out of the Tar Pit — S9: Functional Relational Programming"
+title: "S9: Functional Relational Programming"
 tags: [frp, functional-programming, relational-model, architecture]
 sources: [out-of-the-tar-pit]
 created: 2026-04-08
 updated: 2026-04-09
 ---
 
-# Out of the Tar Pit — S9: Functional Relational Programming
+# S9: Functional Relational Programming
 
 [[functional-relational-programming]] (FRP) is the concrete architecture the authors propose for applying the avoid-and-separate principles. FRP is currently hypothetical but grounded in widely-proven ideas from functional programming and the relational model. All essential state takes the form of relations, and all essential logic is expressed using relational algebra extended with pure user-defined functions.
 

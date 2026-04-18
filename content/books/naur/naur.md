@@ -1,11 +1,12 @@
 ---
-title: Programming as Theory Building
-sources: [naur]
+title: 0 - Programming as Theory Building
+sources:
+  - naur
 created: 2026-04-15
 updated: 2026-04-15
 ---
 
-# Programming as Theory Building
+# Overview
 
 "Programming as Theory Building" (1985) by Peter Naur is one of the most cited essays on the nature of programming. Naur argues that the dominant view of programming as text production is fundamentally misleading — the primary result of programming is not the program text but the theory that programmers build of how the program maps to the real world.
 

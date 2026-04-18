@@ -1,12 +1,12 @@
 ---
-title: "Out of the Tar Pit — S1: Introduction"
+title: "S1: Introduction"
 tags: [complexity, state, functional-programming, relational-model]
 sources: [out-of-the-tar-pit]
 created: 2026-04-08
 updated: 2026-04-08
 ---
 
-# Out of the Tar Pit — S1: Introduction
+# S1: Introduction
 
 The "software crisis" has deepened since its identification in 1968. Moseley and Marks argue that [[complexity]] is the biggest problem in large-scale software, and the major contributor is the handling of [[state-and-complexity]]. When mutable state permeates a system, analyzing and reasoning about it becomes extremely difficult. Two secondary contributors are code volume and explicit concern with [[control-flow-complexity]].
 

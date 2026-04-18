@@ -1,12 +1,12 @@
 ---
-title: "Ch 7: Different Layer, Different Abstraction"
+title: "Chapter 7 - Different Layer, Different Abstraction"
 tags: [chapter, software-design, modules, layers]
 sources: [a-philosophy-of-software-design]
 created: 2026-04-08
 updated: 2026-04-08
 ---
 
-# Ch 7: Different Layer, Different Abstraction
+# Chapter 7 - Different Layer, Different Abstraction
 
 Part of [[a-philosophy-of-software-design]]
 

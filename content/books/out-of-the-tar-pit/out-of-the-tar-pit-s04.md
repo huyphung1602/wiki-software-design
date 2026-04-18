@@ -1,12 +1,12 @@
 ---
-title: "Out of the Tar Pit — S4: Causes of Complexity"
+title: "S4: Causes of Complexity"
 tags: [complexity, state, control-flow, code-volume]
 sources: [out-of-the-tar-pit]
 created: 2026-04-08
 updated: 2026-04-08
 ---
 
-# Out of the Tar Pit — S4: Causes of Complexity
+# S4: Causes of Complexity
 
 This section identifies three primary causes of complexity in software systems.
 

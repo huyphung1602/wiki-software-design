@@ -1,12 +1,12 @@
 ---
-title: "A Philosophy of Software Design — Ch 2: The Nature of Complexity"
+title: "Chapter 2 - The Nature of Complexity"
 tags: [chapter, complexity, foundations]
 sources: [a-philosophy-of-software-design]
 created: 2026-04-08
 updated: 2026-04-08
 ---
 
-# A Philosophy of Software Design — Ch 2: The Nature of Complexity
+# Chapter 2 - The Nature of Complexity
 
 Part of [[a-philosophy-of-software-design]]
 

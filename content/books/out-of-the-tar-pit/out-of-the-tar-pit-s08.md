@@ -1,12 +1,12 @@
 ---
-title: "Out of the Tar Pit — S8: The Relational Model"
+title: "S8: The Relational Model"
 tags: [relational-model, data-independence, integrity-constraints]
 sources: [out-of-the-tar-pit]
 created: 2026-04-08
 updated: 2026-04-08
 ---
 
-# Out of the Tar Pit — S8: The Relational Model
+# S8: The Relational Model
 
 The [[relational-model]] has nothing intrinsically to do with databases. It is an elegant approach to structuring data, manipulating it, maintaining integrity, and enforcing a clear separation between logical and physical layers. These features are applicable to state and data in any context.
 

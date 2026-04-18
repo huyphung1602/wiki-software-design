@@ -1,12 +1,12 @@
 ---
-title: "Ch 22: Conclusion"
+title: "Chapter 22 - Conclusion"
 tags: [software-design, philosophy, summary]
 sources: [a-philosophy-of-software-design]
 created: 2026-04-08
 updated: 2026-04-08
 ---
 
-# Ch 22: Conclusion
+# Chapter 22 - Conclusion
 
 Part of [[a-philosophy-of-software-design]]
 

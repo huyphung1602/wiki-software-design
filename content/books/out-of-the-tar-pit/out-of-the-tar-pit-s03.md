@@ -1,12 +1,12 @@
 ---
-title: "Out of the Tar Pit — S3: Approaches to Understanding"
+title: "S3: Approaches to Understanding"
 tags: [testing, reasoning, simplicity]
 sources: [out-of-the-tar-pit]
 created: 2026-04-08
 updated: 2026-04-08
 ---
 
-# Out of the Tar Pit — S3: Approaches to Understanding
+# S3: Approaches to Understanding
 
 There are two widely-used approaches to understanding software systems: testing and informal reasoning. Testing examines a system from the outside as a "black box," drawing conclusions from observations in specific situations. Informal reasoning examines a system from the inside, using extra structural information to build understanding.
 
